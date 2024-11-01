@@ -1,0 +1,15 @@
+<?php
+$translate = $this->plugin('translate');
+$showLayout = $this->themeSetting('show_layout');
+?>
+<script src="/application/asset/js/advanced-search.js?v=4.1.1"></script>
+<form id="advanced-search" method="get" action="/s/testinstanz-katalog-queer-search/item">
+<div class="advanced-search-content">
+    <div class="field">
+        <div class="field-meta"><label for="fulltext_search">Volltextsuche</label></div>
+        <div class="inputs"><input class="touched" id="fulltext_search" name="fulltext_search" type="text" value="" /></div>
+        <input type="image" src="https://test.katalog.queersearch.org/files/asset/qs-lupe.jpeg" style="width:30px; height:auto; margin-top:15px;transform: scaleX(-1);" alt="Suche">
+        <!--<input type="submit" name="submit" value="Suche">-->
+    </div>
+</div>
+</form>
