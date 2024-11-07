@@ -2,7 +2,7 @@
 Alle Dateien/Codes, die im Zuge der Frontendgestaltung erzeugt wurden
 
 * Ordner **CSS** = enthält aktuelle CSS Datei (omekastyles.css) und Backups (omekastyles-Datum.css); momentan über CSS-Editor eingebunden: Lato (font): https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap
-* Ordenr **theme-erweiterungen** = enthält verschiedene Änderungen an Theme-Dateien
+* Ordner **theme-erweiterungen** = enthält verschiedene Änderungen an Theme-Dateien
   * **volltextsuche.phtml** = Templaterweiterung, um auf der Homeseite eine Volltextsuche einbinden zu können. Pfad auf Omeka S Instanz: themes/foundation/view/commmon/block-template/ /
     **Achtung:** Enthält Pfad zu Bilddatei, muss bei Umzug von Test- auf Produktivinstanz angeglichen werden
   * **theme.ini** = hier müssen Templatererweiterungen initialisiert werden. Pfad auf Omeka S Instanz: themes/foundation/config/
