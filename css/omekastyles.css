@@ -101,6 +101,11 @@ a.footerlink
     color: #fff;
 }
 
+.button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus
+{
+background-color: transparent;
+color: #000000;
+}
 
 /*******************************************/
 /********* TOP-NAVIGATION ************/
@@ -174,6 +179,13 @@ h1.site-title
    margin-left: 40%;
 }
 
+/* BESCHREIBUNGSTEXT AUSBLENDEN */
+.item.resource.media-object .description.full
+{
+display: none;
+}
+
+
 /********************************************/
 /****************  HOME ******************/
 /******************************************/
@@ -204,22 +216,129 @@ h1.site-title
    border: none;
 }
 
+/* GRAPH AUF HOME */
+/* DERZEIT NICHT AKTIV */
+.block-d3Graph, .block .d3-graph
+{
+  width: 100% !important;
+}
+
 /**********************************************************/
 /************  OBJEKT EINZELANSICHT ***************/
 /********************************************************/
+
+/* CONTEN EINZELSEITEN IN DIE MITTE RÜCKEN */
+
+@media print, screen and (min-width: 40em) 
+{
+    body:not(.browse) #content 
+{
+        padding-left: 5px;
+        margin: auto !important;
+    }
+}
+
+/* LIGHTBOX */
 .lg-backdrop
 {
    background-color: #ffffff;
 }
+#lg-maximize-1
+{
+background-color: #000000;
+}
+.lg-icon:focus-visible
+ {
+outline: 0px solid #000000;
+}
+
+/* SELECTION */
+.objektmerkenabstand
+{
+margin-bottom:70px;
+}
+.selection-button:hover
+{
+background-color: transparent;
+}
+.selection-icon
+{
+top: 16px;
+}
+.selection.browse 
+{
+margin-left: 10px;
+}
+
 
 h3.label
 {
    display: none;
 }
 
+/* WEITER- UND ZURÜCKPFEILE */
+.block.resource-block.block-previous-next
+{
+margin-bottom: 20px;
+margin-top: 50px;
+}
+.block.resource-block.block-previous-next a.button:first-child
+{
+background-image: url("https://test.katalog.queersearch.org/files/asset/arrow-left-32.png");
+height: 32px; 
+width:32px; 
+margin-right: -5px;
+margin-left:-10px;
+border:none;
+color:transparent;
+}
+.block.resource-block.block-previous-next a.button:last-child
+{
+background-image: url("https://test.katalog.queersearch.org/files/asset/arrow-right-32.png");
+height: 32px; 
+width:32px; 
+border:none;
+color:transparent;
+}
+.block.resource-block.block-previous-next a.button:hover
+{
+background-color: transparent;
+}
+
+/* LOGOS DATENGEBER*INNEN AUSBLENDEN */
 .resource.show .resource-link img
 {
    display:none !important;
+}
+
+/* METADATA BROWSE */
+
+.resource.show .resource-link img
+{
+   display:none;
+}
+.metadata-browse-link
+{
+border-bottom: 1px solid #fff;
+}
+.resource.show .resource-link
+{
+display: inline;
+}
+
+/*.uri-value-link
+{
+   display:none;
+}*/
+
+/* DATENEXPORT MÖGLICHKEIT */
+.bulk-export
+{
+margin-top:70px;
+}
+.bulk-export ul
+{
+margin-left: 0;
 }
 
 /********************************************/
