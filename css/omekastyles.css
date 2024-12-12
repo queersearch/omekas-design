@@ -107,6 +107,11 @@ background-color: transparent;
 color: #000000;
 }
 
+.button.disabled, .button[disabled]
+{
+opacity: 0;
+}
+
 /*******************************************/
 /********* TOP-NAVIGATION ************/
 /******************************************/
@@ -284,21 +289,26 @@ margin-top: 50px;
 }
 .block.resource-block.block-previous-next a.button:first-child
 {
-background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-links.jpeg");
-height: 32px; 
-width:32px; 
+background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-links-19-30.jpeg");
+height: 40px;
+width:19px;
 margin-right: -5px;
 margin-left:-10px;
 border:none;
 color:transparent;
+background-repeat: no-repeat;
+background-position-y: 10px;
 }
+
 .block.resource-block.block-previous-next a.button:last-child
 {
-background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-rechts.jpeg");
-height: 32px; 
-width:32px; 
+background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-rechts-19-30.jpeg");
+height: 40px;
+width:19px;
 border:none;
 color:transparent;
+background-repeat: no-repeat;
+background-position-y: 10px;
 }
 .block.resource-block.block-previous-next a.button:hover
 {
