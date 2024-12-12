@@ -42,6 +42,35 @@ $valueLang = $filterLocale ? [$lang, ''] : null;
     <?php if ($fullWidthMainHasBlocks): ?>
     <div class="full-width-main">
         <?php echo $fullWidthMainBlockContent->getBlocks(); ?>
+        
+
+
+<!-- EINFÜGUNG ZURÜCK- UND WEITER-PFEILE -->
+        <?php
+$plugins = $this->getHelperPluginManager();
+$hasPreviousNext = $plugins->has('previousNext');
+?>
+<?php if ($hasPreviousNext): ?>
+<div class="block resource-block block-previous-next">
+
+    <?php if ($previous = $this->previousResource($resource)): ?>
+   <<?= $previous->link($translate(''), null, ['class' => 'button', 'rel']) ?><span style="font-size:1.5625rem;">&nbsp;&nbsp;voriges Objekt</span>
+
+    <?php endif; ?>
+
+    
+    <?php if ($next = $this->nextResource($resource)): ?><span style="font-size:1.5625rem;">&nbsp;&nbsp;nächstes Objekt&nbsp;&nbsp;</span>
+    <?= $next->link($translate(''), null, ['class' => 'button', 'rel']) ?>
+    <?php endif; ?>
+
+<!-- ENDE EINFÜGUNG ZURÜCK- UND WEITER-PFEILE -->
+
+
+</div>
+<?php endif; ?>
+
+
+
 
     </div>
     <?php endif; ?>
