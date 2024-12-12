@@ -284,7 +284,7 @@ margin-top: 50px;
 }
 .block.resource-block.block-previous-next a.button:first-child
 {
-background-image: url("https://test.katalog.queersearch.org/files/asset/arrow-left-32.png");
+background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-links.jpeg");
 height: 32px; 
 width:32px; 
 margin-right: -5px;
@@ -294,7 +294,7 @@ color:transparent;
 }
 .block.resource-block.block-previous-next a.button:last-child
 {
-background-image: url("https://test.katalog.queersearch.org/files/asset/arrow-right-32.png");
+background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-rechts.jpeg");
 height: 32px; 
 width:32px; 
 border:none;
