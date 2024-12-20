@@ -267,7 +267,7 @@ class Module extends AbstractModule
                 $event->setParam('html', $link);
             } else {
                 //$text = sprintf($translator->translate('See all %s with this value'), $translator->translate($controllerLabel));
-                $text = ('[ als Schlagwort ← ] ');
+                $text = ('[ alle Objekte ← ] ');
                 //$text = ('');
                 $link = $hyperlink($text, $searchUrl, ['class' => 'metadata-browse-link']);
                 echo $link;
