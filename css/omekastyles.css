@@ -1,5 +1,5 @@
 /******************************************/
-/**************  Defaults*****************/
+/**************  Defaults *****************/
 /****************************************/
 @media print, screen and (min-width: 40em)
 {
@@ -43,13 +43,14 @@ a:hover
 {
    background: #fff;
    color: #000;
-   /*font-size: 2.5rem;*/
-   font-size: 3.5rem;
+   /*font-size: 3.5rem;*/
+   font-size: 3rem;
    font-family: "Lato", sans-serif;
    font-weight: 500;
    line-height: 4.6rem;
    letter-spacing: 1px;
 }
+
 .menu .active>a, .menu a
 {
    border-bottom:none;
@@ -163,6 +164,7 @@ display: inline-block;
 {
    max-width: 25%;
 }
+
 h1.site-title
 {
     margin: 0 0 0 10px;
@@ -180,7 +182,7 @@ h1.site-title
 }
 .top-bar .top-bar-right
 {
-      margin-left: 25%;
+      margin-left: 5%;
 }
 
 /**************************************************/
@@ -382,6 +384,63 @@ margin-top:70px;
 {
 margin-left: 0;
 }
+
+
+/***********************************************************/
+/********************** SUCHE *****************************/
+/***********************************************************/
+
+#search-filters .filter select:nth-of-type(1)
+{
+min-width:80px;
+}
+.field-meta label, .field-meta .label
+{
+background-color: #000;
+}
+#search-filters 
+{
+margin-top: 12px;
+}
+.omeka-pagination form, .omeka-pagination .button-group 
+{
+white-space: nowrap;
+}
+.search-facets 
+{
+min-width: 300px;
+}
+.search-form-buttons
+{
+vertical-align:bottom;
+}
+.form-search button.search-submit 
+{
+position:relative;
+top: 25px;
+}
+a.advanced-search
+{
+display: none;
+}
+
+
+/***********************************************************/
+/******************** SCHLAGWORTINDEX **********************/
+/***********************************************************/
+
+.pagination li:last-child, .pagination li:first-child
+{
+display: unset;
+}
+
+#reference-headings
+{
+padding-inline-start: 0px;
+margin-left: 0px;
+}
+
+
 
 /********************************************/
 /**************  FOOTER ******************/
