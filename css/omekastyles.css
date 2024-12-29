@@ -24,8 +24,15 @@ body
 /***************  TYPO  ******************/
 /****************************************/
 
-/*  Links */
+/* Überschriften *
+h1
+{
+line-height: 1.2;
+}
 
+
+
+/*  Links */
 a
 {
    color: #000;
@@ -259,6 +266,21 @@ display: none;
    border: none;
 }
 
+.introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
+{
+   width:80% !important;
+}
+
+.block.block-search
+{
+   width:100% !important;
+}
+
+.introtext p, .institutionen p, .text-ueber p
+{
+   font-size:1.5rem;
+}
+
 /* GRAPH AUF HOME */
 /* DERZEIT NICHT AKTIV */
 .block-d3Graph, .block .d3-graph
@@ -281,6 +303,12 @@ display: none;
     }
 }
 
+/* Breite verskleinern */
+.item #content
+{
+   max-width:80% !important;
+}
+
 /* LIGHTBOX */
 .lg-backdrop
 {
@@ -296,6 +324,16 @@ background-color: #000000;
 }
 
 /* SELECTION */
+
+#objektmerken, #objektmerken a
+{
+   font-size:1rem;
+   margin-top: 20px;
+   border:none;
+   color: gray;
+   font-weight: bold;
+}
+
 .objektmerkenabstand
 {
    margin-bottom:70px;
@@ -322,12 +360,13 @@ h3.label
 {
    margin-bottom: 20px;
    margin-top: 50px;
+   text-align: right;
 }
 .block.resource-block.block-previous-next a.button:first-child
 {
-   background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-links-19-30.jpeg");
-   height: 40px;
-   width:19px;
+   background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-links-13-20.jpeg");
+   height: 30px;
+   width:13px;
    margin-right: -5px;
    margin-left:-10px;
    border:none;
@@ -338,9 +377,9 @@ h3.label
 
 .block.resource-block.block-previous-next a.button:last-child
 {
-   background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-rechts-19-30.jpeg");
-   height: 40px;
-   width:19px;
+   background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-rechts-13-20.jpeg");
+   height: 30px;
+   width:13px;
    border:none;
    color:transparent;
    background-repeat: no-repeat;
@@ -349,6 +388,11 @@ h3.label
 .block.resource-block.block-previous-next a.button:hover
 {
    background-color: transparent;
+}
+
+.vorzurueck
+{
+   font-size:1.5rem;
 }
 
 /* LOGOS DATENGEBER*INNEN AUSBLENDEN */
