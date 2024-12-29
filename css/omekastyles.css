@@ -111,10 +111,9 @@ text-decoration: none;
    color: #fff;
 }
 
-[type=button]:hover
+[type=submit]:hover, [type=submit]:focus, [type=button]:hover, [type=button]:focus 
 {
-    background-color: #000;
-    color: #fff;
+background-color: #000;
 }
 
 .button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus
@@ -408,7 +407,7 @@ white-space: nowrap;
 }
 .search-facets 
 {
-min-width: 300px;
+min-width: 400px;
 }
 .search-form-buttons
 {
