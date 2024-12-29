@@ -11,8 +11,8 @@
 }
 #content
 {
-       min-height: 70vh;
-       padding-left: 0
+   min-height: 70vh;
+   padding-left: 0
 }
 body
 {
@@ -69,18 +69,18 @@ a.footerlink
 }
 a.advanced-search
 {
-background-color: #000;
-color: #fff;
-padding: 4px;
-font-weight: 600;
+   background-color: #000;
+   color: #fff;
+   padding: 4px;
+   font-weight: 600;
 }
 
 a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
 {
-color:#000 !important;
-outline-color: transparent !important;
-border-bottom: 2px solid white !important;
-text-decoration: none;
+   color:#000 !important;
+   outline-color: transparent !important;
+   border-bottom: 2px solid white !important;
+   text-decoration: none;
 }
 
 /* TEXT-STYLES*/
@@ -113,40 +113,40 @@ text-decoration: none;
 
 [type=submit]:hover, [type=submit]:focus, [type=button]:hover, [type=button]:focus 
 {
-background-color: #000;
+   background-color: #000;
 }
 
 .button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus
 {
-background-color: transparent;
-color: #000000;
+   background-color: transparent;
+   color: #000000;
 }
 
 .button.disabled, .button[disabled]
 {
-opacity: 0;
+   opacity: 0;
 }
 .browse-controls select, .browse-controls button
 {
-border: 1px solid #000;
-background-color: #fff !important;
-color: #000 !important;
+   border: 1px solid #000;
+   background-color: #fff !important;
+   color: #000 !important;
 }
 
 .facets-reset
 {
-background-color: #000;
-color: #fff ;
-vertical-align: middle;
-margin: 0 0 1rem 0;
-padding: .85em 1em;
-font-family: inherit;
-font-size: .9rem;
--webkit-appearance: none;
-line-height: 1;
-text-align: center;
-cursor: pointer;
-display: inline-block;
+   background-color: #000;
+   color: #fff ;
+   vertical-align: middle;
+   margin: 0 0 1rem 0;
+   padding: .85em 1em;
+   font-family: inherit;
+   font-size: .9rem;
+   -webkit-appearance: none;
+   line-height: 1;
+   text-align: center;
+   cursor: pointer;
+   display: inline-block;
 }
 
 /*******************************************/
@@ -291,29 +291,27 @@ display: none;
 background-color: #000000;
 }
 .lg-icon:focus-visible
- {
-outline: 0px solid #000000;
+{
+   outline: 0px solid #000000;
 }
 
 /* SELECTION */
 .objektmerkenabstand
 {
-margin-bottom:70px;
+   margin-bottom:70px;
 }
 .selection-button:hover
 {
-background-color: transparent;
+   background-color: transparent;
 }
 .selection-icon
 {
-top: 16px;
+   top: 16px;
 }
 .selection.browse 
 {
-margin-left: 10px;
+   margin-left: 10px;
 }
-
-
 h3.label
 {
    display: none;
@@ -322,35 +320,35 @@ h3.label
 /* WEITER- UND ZURÜCKPFEILE */
 .block.resource-block.block-previous-next
 {
-margin-bottom: 20px;
-margin-top: 50px;
+   margin-bottom: 20px;
+   margin-top: 50px;
 }
 .block.resource-block.block-previous-next a.button:first-child
 {
-background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-links-19-30.jpeg");
-height: 40px;
-width:19px;
-margin-right: -5px;
-margin-left:-10px;
-border:none;
-color:transparent;
-background-repeat: no-repeat;
-background-position-y: 10px;
+   background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-links-19-30.jpeg");
+   height: 40px;
+   width:19px;
+   margin-right: -5px;
+   margin-left:-10px;
+   border:none;
+   color:transparent;
+   background-repeat: no-repeat;
+   background-position-y: 10px;
 }
 
 .block.resource-block.block-previous-next a.button:last-child
 {
-background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-rechts-19-30.jpeg");
-height: 40px;
-width:19px;
-border:none;
-color:transparent;
-background-repeat: no-repeat;
-background-position-y: 10px;
+   background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-rechts-19-30.jpeg");
+   height: 40px;
+   width:19px;
+   border:none;
+   color:transparent;
+   background-repeat: no-repeat;
+   background-position-y: 10px;
 }
 .block.resource-block.block-previous-next a.button:hover
 {
-background-color: transparent;
+   background-color: transparent;
 }
 
 /* LOGOS DATENGEBER*INNEN AUSBLENDEN */
@@ -367,21 +365,21 @@ background-color: transparent;
 }
 .metadata-browse-link
 {
-border-bottom: 1px solid #fff;
+   border-bottom: 1px solid #fff;
 }
 .resource.show .resource-link
 {
-display: inline;
+   display: inline;
 }
 
 /* DATENEXPORT MÖGLICHKEIT */
 .bulk-export
 {
-margin-top:70px;
+   margin-top:70px;
 }
 .bulk-export ul
 {
-margin-left: 0;
+   margin-left: 0;
 }
 
 
@@ -391,38 +389,45 @@ margin-left: 0;
 
 #search-filters .filter select:nth-of-type(1)
 {
-min-width:80px;
+   min-width:80px;
 }
 .field-meta label, .field-meta .label
 {
-background-color: #000;
+   background-color: #000;
 }
 #search-filters 
 {
-margin-top: 12px;
+   margin-top: 12px;
 }
 .omeka-pagination form, .omeka-pagination .button-group 
 {
-white-space: nowrap;
+   white-space: nowrap;
 }
 .search-facets 
 {
-min-width: 400px;
+   min-width: 400px;
 }
 .search-form-buttons
 {
-vertical-align:bottom;
+   vertical-align:bottom;
 }
 .form-search button.search-submit 
 {
-position:relative;
-top: 25px;
+   position:relative;
+   top: 25px;
 }
 a.advanced-search
 {
-display: none;
+   display: none;
 }
-
+.facets-list
+{
+   margin-left:0;
+}
+.facets-apply, .facets-reset
+{
+   padding: .5em;
+}
 
 /***********************************************************/
 /******************** SCHLAGWORTINDEX **********************/
@@ -430,13 +435,13 @@ display: none;
 
 .pagination li:last-child, .pagination li:first-child
 {
-display: unset;
+   display: unset;
 }
 
 #reference-headings
 {
-padding-inline-start: 0px;
-margin-left: 0px;
+   padding-inline-start: 0px;
+   margin-left: 0px;
 }
 
 
