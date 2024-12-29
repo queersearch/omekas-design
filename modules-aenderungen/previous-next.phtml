@@ -1,8 +1,3 @@
-<!--modules/BlockPlus/view/common/resource-page-block-layout/previous-next.phtml-->
-
-<!-- Erklärungen zu Block-Elementen hier: https://github.com/Daniel-KM/Omeka-S-module-BlockPlus-->
-
-
 <?php
 /**
  * @var \Laminas\View\Renderer\PhpRenderer $this
@@ -17,26 +12,29 @@
 $plugins = $this->getHelperPluginManager();
 $translate = $plugins->get('translate');
 $hyperlink = $plugins->get('hyperlink');
+
 ?>
 
 <div class="block resource-block block-previous-next">
-    <?php if ($previous): ?>
-        <?= $hyperlink('', $previous->siteUrl(), ['class' => 'button', 'rel' => 'prev', 'title' => $translate('Previous resource')]) ?><!-- MEINE ERGÄNZUNG --><span style="font-size:1.5625rem;">&nbsp;&nbsp;voriges Objekt
+    <!--<?php if ($previous): ?>
+        <?= $hyperlink('', $previous->siteUrl(), ['class' => 'button', 'rel' => 'prev', 'title' => $translate('Previous resource')]) ?>
     <?php else: ?>
         <?= $hyperlink('', '#', ['class' => 'button', 'rel' => 'prev', 'title' => $translate('No previous resource'), 'disabled' => 'disabled', 'style' => 'color:gray;pointer-events:none;', 'tabindex' => '-1']) ?>
-    <?php endif; ?>
-    <?php /* // Not configurable in resource page block.
-    <?php if (!empty($back): ?>
+    <?php endif; ?>-->
+
+
+    <!--<?php if (!empty($back)): ?>
         <?php if ($lastBrowseUrl): ?>
             <?= $hyperlink('^', $lastBrowseUrl, ['class' => 'button', 'rel' => 'search', 'title' => $translate('Back to last search')]) ?>
         <?php else: ?>
             <?= $hyperlink('^', '#', ['class' => 'button', 'rel' => 'search', 'title' => $translate('Back to last search'), 'disabled' => 'disabled', 'style' => 'color:gray;pointer-events:none;', 'tabindex' => '-1']) ?>
         <?php endif; ?>
-    <?php endif; ?>
-    */ ?>
-    <?php if ($next): ?><!-- MEINE ERGÄNZUNG -->&nbsp;&nbsp;nächstes Objekt&nbsp;&nbsp;</span>
+    <?php endif; ?>-->
+
+
+    <!--<?php if ($next): ?>
         <?= $hyperlink('', $next->siteUrl(), ['class' => 'button', 'rel' => 'next', 'title' => $translate('Next resource')]) ?>
     <?php else: ?>
         <?= $hyperlink('', '#', ['class' => 'button', 'rel' => 'next', 'title' => $translate('No next resource'), 'disabled' => 'disabled', 'style' => 'color:gray;pointer-events:none;', 'tabindex' => '-1']) ?>
-    <?php endif; ?>
+    <?php endif; ?>-->
 </div>
