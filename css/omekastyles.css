@@ -65,6 +65,7 @@ a:hover
 a.metadata-browse-link
 {
    display: inline !important;
+   font-size:60%;
 }
 .site-title a
 {
