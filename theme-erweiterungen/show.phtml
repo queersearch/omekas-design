@@ -24,9 +24,6 @@ $rightSidebarHasBlocks = $rightSidebarBlockContent->hasBlocks();
 $filterLocale = (bool) $this->siteSetting('filter_locale_values');
 $lang = $this->lang();
 $valueLang = $filterLocale ? [$lang, ''] : null;
-
-
-
 ?>
 
 
@@ -40,7 +37,7 @@ $valueLang = $filterLocale ? [$lang, ''] : null;
 <!-- MEINE EINFÜGUNG -->
 <div id="objektmerken">
 
-    <?php $this->trigger('view.show.before'); ?> 
+    <?php $this->trigger('view.show.before'); ?>
 
 
 <!-- MEINE EINFÜGUNG -->
@@ -63,13 +60,16 @@ $hasPreviousNext = $plugins->has('previousNext');
 <div class="block resource-block block-previous-next">
 
     <?php if ($previous = $this->previousResource($resource)): ?>
-   <<?= $previous->link($translate(''), null, ['class' => 'button', 'rel']) ?><span class="vorzurueck">&nbsp;&nbsp;voriges Objekt</span>
+   <!--<?= $previous->link($translate(''), null, ['class' => 'button', 'rel']) ?><span class="vorzurueck">&nbsp;&nbsp;voriges Objekt</span>-->
+       <span class="vorzurueck"><?= $previous->link($translate('〈   voriges Objekt  '), null, ['class' => 'previous-item']) ?></span>
 
     <?php endif; ?>
 
     
-    <?php if ($next = $this->nextResource($resource)): ?><span class="vorzurueck">&nbsp;&nbsp;nächstes Objekt&nbsp;&nbsp;</span>
-    <?= $next->link($translate(''), null, ['class' => 'button', 'rel']) ?>
+    <?php if ($next = $this->nextResource($resource)): ?><!--<span class="vorzurueck">&nbsp;&nbsp;nächstes Objekt&nbsp;&nbsp;</span>-->
+    <!--<?= $next->link($translate(''), null, ['class' => 'button', 'rel']) ?>-->
+        <span class="vorzurueck">&nbsp;&nbsp;&nbsp;<?= $next->link($translate('nächstes Objekt   〉'), null, ['class' => 'next-item']) ?></span>
+
     <?php endif; ?>
 
 <!-- ENDE EINFÜGUNG ZURÜCK- UND WEITER-PFEILE -->
@@ -113,6 +113,18 @@ $hasPreviousNext = $plugins->has('previousNext');
         <?php endif; ?>
     </div>
     <?php endif; ?>
-
     <!--MEINE AUSKOMMENTIERUNG <?php $this->trigger('view.show.after'); ?>-->
+
+
+
+<!-- Back-Button zur Suchergebnisliste -->
+<?php
+   if((strpos($_SERVER['HTTP_REFERER'] ?? '', '/search') !== false)){
+      $_SESSION['search'] = $_SERVER['HTTP_REFERER'];
+   }
+?>
+
+<?php if (! empty($_SESSION['search'])): ?>
+   <a id="back-button" href="<?php echo $_SESSION['search']; ?>"><div class="backtosearch">〈〈 &nbsp; zurück zum Suchergebnis</a></div>
+<?php endif; ?>
 </div>
