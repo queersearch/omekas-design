@@ -27,7 +27,8 @@ body
 /* Überschriften */
 h1
 {
-line-height: 1.2;
+   line-height: 1.2;
+   margin-bottom: 2.5rem;
 }
 
 
@@ -184,12 +185,26 @@ h1.site-title
 {
    background-color: #ffffff;
 }
+.top-bar
+{
+   margin-top: 3rem;
+}
 .top-bar form
-{    display: none;
+{    
+   display: none;
 }
 .top-bar .top-bar-right
 {
       margin-left: 5%;
+}
+.menu
+{
+   margin-block-end: -7.4rem;
+   background-color: transparent!important;
+}
+.menu .active>a, .menu a, a.suchindex-home
+{
+   background: transparent !important;
 }
 
 /**************************************************/
@@ -511,7 +526,7 @@ a.advanced-search
 footer
 {
    border-top: 2px solid #000;
-   padding: 5px 0 0 0 ;
+   padding: 5px 0 0 0;
 }
 
 
@@ -526,14 +541,14 @@ footer
 /*****************************************************************/
 @media screen and (max-width:1024px)
 {
-    .title-bar
-    {
-        display: none !important;
+   .title-bar
+   {
+      display: none !important;
    }
-    .top-bar-right
-    {
-        display:block !important;
-    }
+   .top-bar-right
+   {
+      display:block !important;
+   }
 }
 
 /******************************************************************/
@@ -577,7 +592,7 @@ footer
     {
         display:block !important;
         float: right;
-   }
+    }
 
 /*LOGO*/
     .site-title img
