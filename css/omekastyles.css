@@ -539,16 +539,42 @@ footer
 /******************************************************************/
 /********************* BIS 1024px BREITE  ************************/
 /*****************************************************************/
-@media screen and (max-width:1024px)
+@media screen and (max-width:1100px)
 {
    .title-bar
    {
-      display: none !important;
+      display: block !important;
+      float: right;
    }
+   .site-title img 
+   {
+      max-width: 30%;
+   }
+    header .top-bar
+    {
+        padding: 20px 20px 20px 0;
+    }
+   .top-bar .top-bar-left
+    {
+        max-width: 100% !important;
+        display:block !important;
+    }
    .top-bar-right
    {
-      display:block !important;
+      display: none !important;
    }
+   /*BURGER*/
+   .title-bar button, .title-bar button:hover
+    {
+        padding:0;
+        font-size: 2rem;
+        color: #000;
+        background-color: #fff;
+    }
+   .search
+    {
+        display: none;
+    }
 }
 
 /******************************************************************/
@@ -575,15 +601,15 @@ footer
         float: none;
         margin-bottom:50px;
     }
-    .top-bar-right
+    /*.top-bar-right
     {
         display:none !important;
     }
-    .top-bar .top-bar-left
+    /*.top-bar .top-bar-left
     {
         max-width: 100%;
         display:block;
-    }
+    }*/
     header .top-bar
     {
         padding: 20px 20px 20px 0;
@@ -592,7 +618,7 @@ footer
     {
         display:block !important;
         float: right;
-    }
+    }*/
 
 /*LOGO*/
     .site-title img
@@ -600,7 +626,7 @@ footer
         width: 40%;
     }
 /*BURGER*/
-    .title-bar button, .title-bar button:hover
+    /*.title-bar button, .title-bar button:hover
     {
         padding:0;
         font-size: 2rem;
@@ -610,7 +636,7 @@ footer
     .search
     {
         display: none;
-    }
+    }*/
 }
 
 
