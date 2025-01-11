@@ -580,51 +580,30 @@ footer
         font-size: 2.5rem;
         line-height: 3.5rem;
     }
-    .page.willkommen.dropdown-menu .fieldset, #advanced-search .field
+   .page-layout-normal .block
+   {
+      margin: 0;
+   }
+   .page.willkommen.dropdown-menu .fieldset, #advanced-search .field
     {
         padding: 0;
     }
     .page.willkommen.dropdown-menu .page-layout-normal .block
     {
         float: none;
-        margin-bottom:50px;
-    }
-    /*.top-bar-right
-    {
-        display:none !important;
-    }
-    /*.top-bar .top-bar-left
-    {
-        max-width: 100%;
-        display:block;
-    }*/
-    header .top-bar
-    {
-        padding: 20px 20px 20px 0;
     }
     .title-bar
     {
         display:block !important;
         float: right;
-    }*/
+    }
 
 /*LOGO*/
     .site-title img
     {
-        width: 40%;
+       max-width: 40%;
+       margin-left: 0.625rem;
     }
-/*BURGER*/
-    /*.title-bar button, .title-bar button:hover
-    {
-        padding:0;
-        font-size: 2rem;
-        color: #000;
-        background-color: #fff;
-    }
-    .search
-    {
-        display: none;
-    }*/
 }
 
 
@@ -633,45 +612,10 @@ footer
 /*****************************************************************/
 @media screen and (max-width:450px)
 {
-   /* .menu .active>a, .menu a, a.suchindex-home
-    {
-        font-size: 2.5rem;
-        line-height: 3.5rem;
-    }
-    .page.willkommen.dropdown-menu .fieldset, #advanced-search .field
-    {
-        padding: 0;
-    }
-    .page.willkommen.dropdown-menu .page-layout-normal .block
-    {
-        float: none;
-        margin-bottom:50px;
-    }
-    .top-bar .top-bar-left
-    {
-        max-width: 100%;
-        display:block;
-    }
-    header .top-bar
-    {
-        padding: 10px;
-    }
-    .title-bar
-    {
-        float: right;
-   }*/
-
 /*LOGO*/
     .site-title img
     {
-        width: 60%;
+       max-width: 45%;
+       margin-left: 0.625rem;
     }
-/*BURGER*/
-/*    .title-bar button, .title-bar button:hover
-    {
-        padding:0;
-        font-size: 2rem;
-        color: #000;
-        background-color: #fff;
-    }*/
 }
