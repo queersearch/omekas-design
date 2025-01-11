@@ -278,11 +278,11 @@ display: none;
 }
 .introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
 {
-   width:80% !important;
+   width:80%;
 }
 .block.block-search
 {
-   width:100% !important;
+   width:100%;
 }
 .introtext p, .institutionen p, .text-ueber p
 {
