@@ -31,8 +31,6 @@ h1
    margin-bottom: 2.5rem;
 }
 
-
-
 /*  Links */
 a
 {
@@ -58,7 +56,6 @@ a:hover
    line-height: 4.6rem;
    letter-spacing: 1px;
 }
-
 .menu .active>a, .menu a
 {
    border-bottom:none;
@@ -83,7 +80,6 @@ a.advanced-search
    padding: 4px;
    font-weight: 600;
 }
-
 a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
 {
    color:#000 !important;
@@ -172,7 +168,6 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
 {
    max-width: 25%;
 }
-
 h1.site-title
 {
     margin: 0 0 0 10px;
@@ -213,7 +208,7 @@ h1.site-title
 
 .item.resource.browse.dropdown-menu #content h2  span
 {
- display:none;
+   display:none;
 }
 .item.resource.browse.dropdown-menu #content h2::after
 {
@@ -281,17 +276,14 @@ display: none;
    padding: 3px;
    border: none;
 }
-
 .introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
 {
    width:80% !important;
 }
-
 .block.block-search
 {
    width:100% !important;
 }
-
 .introtext p, .institutionen p, .text-ueber p
 {
    font-size:1.5rem;
@@ -332,7 +324,7 @@ display: none;
 }
 #lg-maximize-1
 {
-background-color: #000000;
+   background-color: #000000;
 }
 .lg-icon:focus-visible
 {
@@ -349,7 +341,6 @@ background-color: #000000;
    color: gray;
    font-weight: bold;
 }
-
 .objektmerkenabstand
 {
    margin-bottom:70px;
@@ -405,17 +396,14 @@ h3.label
 {
    background-color: transparent;
 }
-
 .vorzurueck
 {
    font-size:1.5rem;
 }
-
 .vorzurueck a
 {
 border: none;
 }
-
 .backtosearch a
 {
 font-size:1.5rem;
