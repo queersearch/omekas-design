@@ -279,6 +279,7 @@ display: none;
 .introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
 {
    width:80%;
+   padding: 5px;
 }
 .block.block-search
 {
@@ -590,7 +591,8 @@ footer
     }
     .page.willkommen.dropdown-menu .page-layout-normal .block
     {
-        float: none;
+       float: none;
+       margin-bottom: 30px;
     }
     .title-bar
     {
