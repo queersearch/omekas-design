@@ -30,12 +30,16 @@ h1
    line-height: 1.2;
    margin-bottom: 2.5rem;
 }
+p
+{
+   font-size: 1.5rem;
+}
 
 /*  Links */
 a
 {
    color: #000;
-   background-color: #ffffff;
+   background-color: #transparent;
    border-bottom: 2px solid black;
    padding-bottom: 2px;
    display: inline;
@@ -87,8 +91,15 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
    border-bottom: 2px solid white !important;
    text-decoration: none;
 }
+:focus-visible, :focus
+{
+   outline-color: transparent;
+   outline-style: auto;
+   outline-width: 0px;
+}
 
-/* TEXT-STYLES*/
+
+/* SPECIAL TEXT-STYLES*/
 
 .site-title-label
 {
@@ -99,34 +110,29 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
    line-height: 4rem;
    text-transform: uppercase;
 }
-.suchein-home, .page.willkommen.dropdown-menu  .field-meta label, .field-meta .label
-{
-   font-size: 1.5rem;
-   font-family: "Lato", sans-serif;
-   background-color:#000;
-   color: #fff;
-   padding: 3px;
-}
-
 /* BUTTONS */
+
+[type=button]:hover, [type=button]:focus
+{
+   color: #d6a7ff !important;
+   background-color: #fff;
+}
 
 .browse-controls input, .browse-controls select, .browse-controls button, .browse-controls .button, [type=button], [type=button][disabled], [type=submit]
 {
-   background-color: #000;
-   color: #fff;
+   /*background-color: #000;
+   color: #fff;*/
 }
 
 [type=submit]:hover, [type=submit]:focus, [type=button]:hover, [type=button]:focus 
 {
-   background-color: #000;
+   /*background-color: #000;*/
 }
-
 .button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus
 {
    background-color: transparent;
    color: #000000;
 }
-
 .button.disabled, .button[disabled]
 {
    opacity: 0;
@@ -137,10 +143,8 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
    background-color: #fff !important;
    color: #000 !important;
 }
-
 .facets-reset
 {
-   background-color: #000;
    color: #fff ;
    vertical-align: middle;
    margin: 0 0 1rem 0;
@@ -152,6 +156,10 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
    text-align: center;
    cursor: pointer;
    display: inline-block;
+}
+#facets-reset, #facets-apply, .field-meta label, [type=submit], [type=submit]:focus
+{
+background-color: #a95eff !important;
 }
 
 /*******************************************/
@@ -202,9 +210,9 @@ h1.site-title
    background: transparent !important;
 }
 
-/**************************************************/
-/*************  SUCHERGEBNIS ****************/
-/***********************************************/
+/***************************************************************/
+/***  SUCHERGEBNIS FILTER NACH OBJEKTTYPEN VON STARTSEITE ******/
+/**************************************************************/
 
 .item.resource.browse.dropdown-menu #content h2  span
 {
@@ -255,6 +263,28 @@ display: none;
 {
    width:50%;
    float:left;
+}
+.introtext
+{
+   background-color: #f99a98;
+   padding: 5px;
+}
+.schnelleinstieg-suche
+{
+   margin-top: 0 !important;
+}
+.schnelleinstieg-suche, .schnelleinstieg-headline
+{
+   background-color: #9ee2cc;
+   margin-bottom: 0 !important;
+}
+.suchein-home, .page.willkommen.dropdown-menu .field-meta label
+{
+   font-size: 1.5rem;
+   font-family: "Lato", sans-serif;
+   background-color:#000;
+   color: #fff;
+   padding: 3px;
 }
 .page.willkommen.dropdown-menu .fieldset, #advanced-search .field
 {
@@ -311,7 +341,18 @@ display: none;
         margin: auto !important;
     }
 }
-
+/* Überschriften einzelner Metadaten */
+dl dt, #objektmerken, #objektmerken a
+{
+   color: #FF6a67 !important;
+   margin-bottom: 0;
+}
+/* Metadaten Werte */
+.resource.show .property dd 
+{
+   font-size: 1.5rem;
+   margin-bottom: 15px;
+}
 /* Breite verskleinern */
 .item #content
 {
@@ -382,7 +423,6 @@ h3.label
    background-repeat: no-repeat;
    background-position-y: 10px;
 }
-
 .block.resource-block.block-previous-next a.button:last-child
 {
    background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-rechts-13-20.jpeg");
@@ -446,17 +486,25 @@ display: block;
 
 
 /***********************************************************/
-/********************** SUCHE *****************************/
+/***************** Erweiterte SUCHE ************************/
 /***********************************************************/
+
+.search-page .field-meta
+{
+margin-bottom: 11px;
+margin-top: -11px;
+}
 
 #search-filters .filter select:nth-of-type(1)
 {
    min-width:80px;
 }
-.field-meta label, .field-meta .label
+
+#search-filters .filter select, #search-filters .filter input, .form-search input[type="search"]
 {
-   background-color: #000;
+border: 1px #a95eff solid !important;
 }
+
 #search-filters 
 {
    margin-top: 12px;
@@ -478,6 +526,15 @@ display: block;
    position:relative;
    top: 25px;
 }
+
+/* VOLLTEXTSUCHE */
+.form-search input[type="search"] 
+{
+   height: 38px;
+   min-height: 38px;
+   margin-top: -4px;
+}
+
 a.advanced-search
 {
    display: none;
@@ -489,6 +546,16 @@ a.advanced-search
 .facets-apply, .facets-reset
 {
    padding: .5em;
+}
+
+/* ERGENISLISTE */
+.resource-list .resource
+{
+border-bottom: 4px solid #9ee2cc;
+}
+.resource-list 
+{
+border-top: 4px solid #9ee2cc;
 }
 
 /***********************************************************/
@@ -519,14 +586,17 @@ footer
 }
 
 
-
 /******************************************************/
-/************ RESPONSIVE ANGABEN ************/
+/******************************************************/
+/******************************************************/
+/***************** RESPONSIVE ANGABEN *****************/
+/******************************************************/
+/******************************************************/
 /******************************************************/
 
 
 /******************************************************************/
-/********************* UNTER 1100px BREITE  ************************/
+/********************* UNTER 1100px BREITE  ***********************/
 /*****************************************************************/
 @media screen and (max-width:1100px)
 {
@@ -560,10 +630,29 @@ footer
         color: #000;
         background-color: #fff;
     }
+   /*BURGER AUSGEKLAPPT*/
+   .off-canvas
+   {
+      padding: 10px;
+   }
+   .menu .active>a, .menu a, a.suchindex-home 
+   {
+      font-size: 1.7rem !important;
+      line-height: 2rem !important;
+   }
    .search
     {
         display: none;
     }
+   /* HOME */
+    .page.willkommen.dropdown-menu .form-search fieldset
+   {
+      margin: 11px 0 36px;
+   }
+    .page.willkommen.dropdown-menu .form-search button.search-submit 
+   {
+      margin-left: 10px;
+   }
 }
 
 /******************************************************************/
@@ -571,20 +660,34 @@ footer
 /*****************************************************************/
 @media screen and (max-width:740px)
 {
-    body:not(.browse) #content
-    {
-        padding: 0 !important;
-        margin: 1rem !important;
+   body:not(.browse) #content
+   {
+      padding: 0 !important;
+      margin: 1rem !important;
     }
-    .menu .active>a, .menu a, a.suchindex-home
-    {
-        font-size: 2.5rem;
-        line-height: 3.5rem;
-    }
+   .menu .active>a, .menu a, a.suchindex-home
+   {
+      font-size: 2.5rem;
+      line-height: 3.5rem;
+   }
    .page-layout-normal .block
    {
       margin: 0;
    }
+   .title-bar
+   {
+      display:block !important;
+      float: right;
+   }
+
+/*LOGO*/
+    .site-title img
+    {
+       max-width: 40%;
+       margin-left: 0.625rem;
+    }
+
+   /* HOME */
    .page.willkommen.dropdown-menu .fieldset, #advanced-search .field
     {
         padding: 0;
@@ -594,18 +697,15 @@ footer
        float: none;
        margin-bottom: 30px;
     }
-    .title-bar
-    {
-        display:block !important;
-        float: right;
-    }
-
-/*LOGO*/
-    .site-title img
-    {
-       max-width: 40%;
-       margin-left: 0.625rem;
-    }
+   .schnelleinstieg-headline,  .schnelleinstieg-headline h1
+   {
+      margin-bottom:0 !important;
+   }
+   .block.block-search
+   {
+      margin-top: 0 !important;
+      padding-top: 2.5rem;
+   }
 }
 
 
@@ -614,10 +714,24 @@ footer
 /*****************************************************************/
 @media screen and (max-width:450px)
 {
+   p
+   {
+      font-size: 1rem !important;
+   }
+   h1
+   {
+      font-size: 2rem !important;
+   }
 /*LOGO*/
     .site-title img
     {
        max-width: 45%;
        margin-left: 0.625rem;
     }
+/* HOME */
+   .introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
+   {
+      width:98% !important;
+      padding:5px;
+   }
 }
