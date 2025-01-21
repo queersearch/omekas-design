@@ -200,6 +200,10 @@ h1.site-title
 {
       margin-left: 5%;
 }
+.top-bar-right .search
+{
+   display: none;
+}
 .menu
 {
    margin-block-end: -7.4rem;
@@ -251,7 +255,7 @@ h1.site-title
 /* BESCHREIBUNGSTEXT AUSBLENDEN */
 .item.resource.media-object .description.full
 {
-display: none;
+   display: none;
 }
 
 
@@ -262,6 +266,31 @@ display: none;
 {
    background-color: #f99a98;
    padding: 5px;
+}
+
+
+/* ABSCHNITT SUCHE */
+
+.page.willkommen.dropdown-menu .form-search fieldset 
+{
+  width: 30%;
+}
+.page.willkommen.dropdown-menu .form-search fieldset  .field
+{
+  width: 100%;
+}
+.page.willkommen.dropdown-menu #form-search .field-meta
+{
+   margin-bottom: 10px;
+}
+.page.willkommen.dropdown-menu [type="submit"]
+{
+   margin-top: 5px;
+   margin-left: 10px;
+}
+.page.willkommen.dropdown-menu #search-filters
+{
+   display: none;
 }
 .schnelleinstieg-suche
 {
@@ -280,6 +309,12 @@ display: none;
    color: #fff;
    padding: 3px;
 }
+.page.willkommen.dropdown-menu .page-layout-normal .block
+{
+   width:100;
+   float:none;
+}
+
 .page.willkommen.dropdown-menu .fieldset, #advanced-search .field
 {
    border:none;
@@ -482,43 +517,26 @@ display: block;
 /***********************************************************/
 /***************** Erweiterte SUCHE ************************/
 /***********************************************************/
-
+.search-page.resource.browse.dropdown-menu .search-form
+{
+   display:block;
+}
 .search-page .field-meta
 {
-margin-bottom: 11px;
-margin-top: -11px;
+   margin-bottom: 11px;
+   margin-top: -11px;
 }
-
-#search-filters .filter select:nth-of-type(1)
+#form-search .field-meta label
 {
-   min-width:80px;
+   font-size:1.9375rem;
+   background-color:transparent !important;
+   margin-top: 40px;
+   color: #000000;
+   margin-left: -7px;
 }
-
-#search-filters .filter select, #search-filters .filter input, .form-search input[type="search"]
+a.advanced-search
 {
-border: 1px #a95eff solid !important;
-}
-
-#search-filters 
-{
-   margin-top: 12px;
-}
-.omeka-pagination form, .omeka-pagination .button-group 
-{
-   white-space: nowrap;
-}
-.search-facets 
-{
-   min-width: 400px;
-}
-.search-form-buttons
-{
-   vertical-align:bottom;
-}
-.form-search button.search-submit 
-{
-   position:relative;
-   top: 25px;
+   display: none;
 }
 
 /* VOLLTEXTSUCHE */
@@ -529,10 +547,49 @@ border: 1px #a95eff solid !important;
    margin-top: -4px;
 }
 
-a.advanced-search
+/* FILTER */
+#search-filters
 {
-   display: none;
+   margin-left: -7px;
+   margin-top: 75px !important;
 }
+.search-filters-advanced::before
+{
+   content: "oder Filter  nutzen ";
+   font-size:1.9375rem;
+   margin-left: 5px;
+}
+
+/* Such-Buttons */
+.search-form-buttons
+{
+   vertical-align:bottom;
+}
+.form-search button.search-submit 
+{
+   position:relative;
+   top: 25px;
+}
+
+/* Ersten Bool ausblenden */
+#search-filters .filter select[name="filter[0][join]"]
+{
+   display:none;
+}
+#search-filters .filter:first-of-type
+{
+   padding-left:0px ;
+}
+#search-filters .filter select:nth-of-type(1)
+{
+   min-width:80px;
+}
+#search-filters .filter select, #search-filters .filter input, .form-search input[type="search"]
+{
+   border: 1px #a95eff solid !important;
+}
+
+/* FACETTEN */
 .facets-list
 {
    margin-left:0;
@@ -541,8 +598,35 @@ a.advanced-search
 {
    padding: .5em;
 }
+.search-facets 
+{
+   min-width: 40%;
+   padding: 0;
+}
+.facet-items.chosen-select[name="facet[dcterms_title][from]"], .facet-items.chosen-select[name="facet[dcterms_title][to]"]
+{
+margin: 0 5px;
+}
+
+
+/* Formularende */
+.search-results-count, .noresults
+{
+display: none;
+}
+.omeka-pagination form, .omeka-pagination .button-group 
+{
+   white-space: nowrap;
+}
+
 
 /* ERGENISLISTE */
+
+.search-results .resource-list .resource-heading 
+{
+   font-weight: normal;
+}
+
 .resource-list .resource
 {
 border-bottom: 4px solid #9ee2cc;
@@ -560,7 +644,6 @@ border-top: 4px solid #9ee2cc;
 {
    display: unset;
 }
-
 #reference-headings
 {
    padding-inline-start: 0px;
