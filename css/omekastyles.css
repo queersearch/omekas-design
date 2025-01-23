@@ -320,7 +320,7 @@ h1.site-title
 {
    width:100;
    float:none;
-   margin:0;
+   margin:0 0 20px 0;
 }
 .page.willkommen.dropdown-menu .fieldset, #advanced-search .field
 {
