@@ -290,7 +290,7 @@ h1.site-title
 }
 .page.willkommen.dropdown-menu #search-filters
 {
-   display: none;
+   display: none !important;
 }
 .schnelleinstieg-suche
 {
