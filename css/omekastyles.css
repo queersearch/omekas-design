@@ -329,10 +329,10 @@ h1.site-title
 }
 .page.willkommen.dropdown-menu [type=submit]
 {
-   margin-top: 15px;
+   margin-top: 59px;
    font-size: 1.5rem;
    font-family: "Lato", sans-serif;
-   padding: 3px;
+   padding: 6px;
    border: none;
 }
 .introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
