@@ -262,15 +262,27 @@ h1.site-title
 /********************************************/
 /****************  HOME ******************/
 /******************************************/
+.introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
+{
+   width:80%;
+   padding: 10px;
+}
+.introtext p, .institutionen p, .text-ueber p
+{
+   font-size:1.5rem;
+}
+
+/* INTRO*/
 .introtext
 {
    background-color: #f99a98;
-   padding: 10px;
 }
 
-
 /* ABSCHNITT SUCHE */
-
+.block.block-search
+{
+   width:100%;
+}
 .page.willkommen.dropdown-menu .form-search fieldset 
 {
   width: 30%;
@@ -282,11 +294,6 @@ h1.site-title
 .page.willkommen.dropdown-menu #form-search .field-meta
 {
    margin-bottom: 10px;
-}
-.page.willkommen.dropdown-menu [type="submit"]
-{
-   margin-top: 5px;
-   margin-left: 10px;
 }
 .page.willkommen.dropdown-menu #search-filters
 {
@@ -314,7 +321,6 @@ h1.site-title
    width:100;
    float:none;
 }
-
 .page.willkommen.dropdown-menu .fieldset, #advanced-search .field
 {
    border:none;
@@ -336,19 +342,9 @@ h1.site-title
    border: none;
    margin-left: 10px;
 }
-.introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
-{
-   width:80%;
-   padding: 5px;
-}
-.block.block-search
-{
-   width:100%;
-}
-.introtext p, .institutionen p, .text-ueber p
-{
-   font-size:1.5rem;
-}
+
+
+
 
 /* GRAPH AUF HOME */
 /* DERZEIT NICHT AKTIV */
@@ -533,7 +529,7 @@ display: block;
    background-color:transparent !important;
    margin-top: 40px;
    color: #000000;
-   margin-left: -7px;
+   margin-left: 0px;
 }
 a.advanced-search
 {
