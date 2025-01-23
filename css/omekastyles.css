@@ -334,6 +334,7 @@ h1.site-title
    font-family: "Lato", sans-serif;
    padding: 6px;
    border: none;
+   margin-left: 10px;
 }
 .introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
 {
