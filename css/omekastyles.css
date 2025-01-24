@@ -417,7 +417,7 @@ dl dt, #objektmerken, #objektmerken a
 {
    color: #FF6a67 !important;
    margin-bottom: 0;
-   font-size: 1.3rem !important;
+   font-size: 1.3rem;
 }
 /* Metadaten Werte */
 .resource.show .property dd 
