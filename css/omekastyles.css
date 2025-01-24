@@ -1009,10 +1009,14 @@ footer
    }
    .objektmerkenabstand 
    {
-      margin-bottom: 30px !important;
+      margin-bottom: 15px !important;
    }
    .block.resource-block.block-previous-next
    {
       margin:0 !important;
+   }
+   .backtosearch
+   {
+      margin-top: 5px !important;
    }
 }
