@@ -12,7 +12,8 @@
 #content
 {
    min-height: 70vh;
-   padding-left: 0
+   padding-left: 0;
+   max-width: 80%;
 }
 body
 {
@@ -110,20 +111,24 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
    line-height: 4rem;
    text-transform: uppercase;
 }
-/* BUTTONS */
 
+/* BUTTONS */
 [type=button]:hover, [type=button]:focus
 {
    color: #d6a7ff !important;
    background-color: #fff;
 }
-
+.button:hover, .button:focus
+{
+   background-color: transparent;
+   color: #000;
+   border: none;
+}
 .browse-controls input, .browse-controls select, .browse-controls button, .browse-controls .button, [type=button], [type=button][disabled], [type=submit]
 {
    /*background-color: #000;
    color: #fff;*/
 }
-
 [type=submit]:hover, [type=submit]:focus, [type=button]:hover, [type=button]:focus 
 {
    /*background-color: #000;*/
@@ -161,7 +166,6 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
 {
    background-color: #a95eff !important;
 }
-
 .layout-toggle
 {
    display: none;
@@ -224,15 +228,15 @@ h1.site-title
 /***  SUCHERGEBNIS FILTER NACH OBJEKTTYPEN VON STARTSEITE ******/
 /**************************************************************/
 
-.item.resource.browse.dropdown-menu #content h2  span
+.item.resource.browse.dropdown-menu #content h2 span
 {
-   display:none;
+   display:block;
 }
 .item.resource.browse.dropdown-menu #content h2::after
 {
-   content: "Suchergebnis";
+   /*content: "Suchergebnis";
    display: block;
-   float: left;
+   float: left;*/
 }
 .filter-label
 {
@@ -270,7 +274,7 @@ h1.site-title
 /******************************************/
 .introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
 {
-   width:80%;
+   width:100%;
    padding: 10px;
 }
 .introtext p, .institutionen p, .text-ueber p
@@ -297,7 +301,7 @@ h1.site-title
 {
   width: 30%;
 }
-.page.willkommen.dropdown-menu .form-search fieldset  .field
+.page.willkommen.dropdown-menu .form-search fieldset .field
 {
   width: 100%;
 }
@@ -328,7 +332,7 @@ h1.site-title
 }
 .page.willkommen.dropdown-menu .page-layout-normal .block
 {
-   width:100;
+   width:100%;
    float:none;
    margin:0 0 20px 0;
 }
@@ -400,7 +404,6 @@ h1.site-title
 /********************************************************/
 
 /* CONTEN EINZELSEITEN IN DIE MITTE RÜCKEN */
-
 @media print, screen and (min-width: 40em) 
 {
     body:not(.browse) #content 
@@ -414,6 +417,7 @@ dl dt, #objektmerken, #objektmerken a
 {
    color: #FF6a67 !important;
    margin-bottom: 0;
+   font-size: 1.3rem !important;
 }
 /* Metadaten Werte */
 .resource.show .property dd 
@@ -421,10 +425,9 @@ dl dt, #objektmerken, #objektmerken a
    font-size: 1.5rem;
    margin-bottom: 15px;
 }
-/* Breite verskleinern */
-.item #content
+h3.label
 {
-   max-width:75rem !important;
+   display: none;
 }
 
 /* LIGHTBOX */
@@ -441,15 +444,27 @@ dl dt, #objektmerken, #objektmerken a
    outline: 0px solid #000000;
 }
 
-/* SELECTION */
 
+/* LINKE SPALTE */
+.spalte-links
+{
+float: left;
+width:40%;
+padding-right: 20px;
+}
+
+/* SELECTION */
+.selection.browse 
+{
+   margin-top: 10px;
+   display: inline-block;
+}
 #objektmerken, #objektmerken a
 {
-   font-size:1rem;
+   font-size:1.3rem;
    margin-top: 20px;
    border:none;
    color: gray;
-   font-weight: bold;
 }
 .objektmerkenabstand
 {
@@ -467,17 +482,13 @@ dl dt, #objektmerken, #objektmerken a
 {
    margin-left: 10px;
 }
-h3.label
-{
-   display: none;
-}
 
 /* WEITER- UND ZURÜCKPFEILE */
 .block.resource-block.block-previous-next
 {
    margin-bottom: 20px;
    margin-top: 50px;
-   text-align: right;
+   text-align: left;
 }
 .block.resource-block.block-previous-next a.button:first-child
 {
@@ -517,12 +528,39 @@ h3.label
 {
    margin-top: 20px;
 }
-
 .backtosearch a
 {
    font-size:1.5rem;
    border: none;
    display: block;
+}
+
+/* EXPORT */
+.value.exporters li a
+{
+   font-size:1.3rem;
+   color: #FF6a67;
+   border: none;
+}
+.bulk-export ul
+{
+   margin-left: 0;
+}
+
+/* RECHTE SPALTE */
+.spalte-rechts
+{
+   float: left;
+   width:60%;
+   margin-top: 40px;
+}
+.item.resource.show.dropdown-menu .resource-title
+{
+   display:none;
+}
+.item.resource.browse.item-set.dropdown-menu .resource-list .resource-link img
+{
+   width: 15% !important;
 }
 
 /* LOGOS DATENGEBER*INNEN AUSBLENDEN */
@@ -546,20 +584,16 @@ h3.label
    display: inline;
 }
 
-/* DATENEXPORT MÖGLICHKEIT */
-.bulk-export
-{
-   margin-top:70px;
-}
-.bulk-export ul
-{
-   margin-left: 0;
-}
+
 
 
 /***********************************************************/
 /***************** Erweiterte SUCHE ************************/
 /***********************************************************/
+#search-page h2
+{
+   display: none;
+}
 .search-page.resource.browse.dropdown-menu .search-form
 {
    display:block;
@@ -648,14 +682,14 @@ a.advanced-search
 }
 .facet-items.chosen-select[name="facet[dcterms_title][from]"], .facet-items.chosen-select[name="facet[dcterms_title][to]"]
 {
-margin: 0 5px;
+   margin: 0 5px;
 }
 
 
 /* FORMULARENDE */
 .noresults
 {
-display: none;
+   display: none;
 }
 .omeka-pagination form, .omeka-pagination .button-group 
 {
@@ -711,6 +745,7 @@ footer
 {
    border-top: 2px solid #000;
    padding: 5px 0 0 0;
+   max-width: 80%;
 }
 
 
@@ -737,14 +772,15 @@ footer
    {
       max-width: 30%;
    }
-    header .top-bar
+   header .top-bar
     {
-        padding: 20px 20px 20px 0;
+       padding: 20px 20px 20px 0;
+       max-width: 80% !important;
     }
    .top-bar .top-bar-left
     {
-        max-width: 100% !important;
-        display:block !important;
+       max-width: 100% !important;
+       display:block !important;
     }
    .top-bar-right
    {
@@ -856,10 +892,86 @@ footer
        max-width: 45%;
        margin-left: 0.625rem;
     }
+   /* BUTTONS UND INPUTS */
+   [type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=number], [type=search], [type=tel], [type=time], [type=url], [type=color], textarea, select
+   {
+      padding: 0.1rem;
+      height: 2rem;
+   }
 /* HOME */
    .introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
    {
       width:98% !important;
       padding:5px;
+   }
+/* SUCHE */
+   .form-search fieldset
+   {
+      margin:0;
+   }
+   .form-search button.search-submit
+   {
+      top: 0px !important;
+   } 
+   .form-search input[type="search"]
+   {
+      width: 85%;
+   }
+   #form-search .field-meta label, .search-filters-advanced::before, #search-facets h3
+   {
+      font-size: 1.5rem !important;
+   }
+
+/* Filter */
+
+   #search-filters .filter:first-of-type, #search-filters .filter
+   {
+      width: 95%;
+   }
+   #search-filters .filter select:nth-of-type(1), #search-filters .filter:first-of-type
+   {
+      min-width: 55px !important;
+   }
+   #search-filters .filter select:nth-of-type(2), #search-filters .filter select:nth-of-type(3) 
+   {
+      min-width: 70px;
+      width:130px;
+   }
+   #search-filters .filter .field
+   {
+   margin:0;
+   }
+   #search-filters .filter:first-of-type
+    {
+   width: 100%;
+   }
+
+/* Facetten */
+   .search-facets
+   {
+   width: 45%;
+   min-width: 45% !important;
+   }
+   .resource-list search-results-list list a
+   {
+    font-size: 1rem !important;
+   }
+   .facet-items.chosen-select[name="facet[dcterms_title][to]"] 
+   {
+   margin: 5px !important;
+   }
+
+/* Ergebnis */
+   .search-results-wrapper
+   {
+   margin-top: 70px;
+   }
+   .search-results
+   {
+   margin-top: 74px;
+   }
+   .row-count
+   {
+   display: none;
    }
 }
