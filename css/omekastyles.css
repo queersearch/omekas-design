@@ -881,6 +881,7 @@ footer
    body:not(.browse) #content
    {
       margin-top: 0 !important;
+      margin-left: 0 !important;
    }
    .stack
    {
