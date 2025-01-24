@@ -826,8 +826,8 @@ footer
 {
    body:not(.browse) #content
    {
-      padding: 0 !important;
-      margin: 1rem !important;
+      padding: 0;
+      margin: 1rem;
     }
    .menu .active>a, .menu a, a.suchindex-home
    {
@@ -878,6 +878,19 @@ footer
 /*****************************************************************/
 @media screen and (max-width:450px)
 {
+   body:not(.browse) #content
+   {
+      margin-top: 0 !important;
+   }
+   .stack
+   {
+      margin-left:10px;
+   }
+   .item #content, #content, .top-bar, footer
+   {
+      max-width: 100% !important;
+      width: 100% !important;
+   }
    p
    {
       font-size: 1rem !important;
@@ -939,39 +952,67 @@ footer
    }
    #search-filters .filter .field
    {
-   margin:0;
+      margin:0;
    }
    #search-filters .filter:first-of-type
-    {
-   width: 100%;
+   {
+      width: 100%;
    }
 
 /* Facetten */
    .search-facets
    {
-   width: 45%;
-   min-width: 45% !important;
+      width: 45%;
+      min-width: 45% !important;
    }
    .resource-list search-results-list list a
    {
-    font-size: 1rem !important;
+      font-size: 1rem !important;
    }
    .facet-items.chosen-select[name="facet[dcterms_title][to]"] 
    {
-   margin: 5px !important;
+      margin: 5px !important;
    }
 
 /* Ergebnis */
    .search-results-wrapper
    {
-   margin-top: 70px;
+      margin-top: 70px;
    }
    .search-results
    {
-   margin-top: 74px;
+      margin-top: 74px;
    }
    .row-count
    {
-   display: none;
+      display: none;
+   }
+
+   /* EINZELOBJEKTANSICHT*/
+   .spalte-rechts, .spalte-links 
+   {
+      float: none !important; 
+      width: 100% !important;
+      padding-right:0 !important;
+   }
+   .unselected .selection-icon
+   {
+      background-size: 17px;
+   }
+   #objektmerken, #objektmerken a
+   {
+      margin-top:0 !important;
+   }
+   #objektmerken, #objektmerken a, dl dt, .vorzurueck, .backtosearch a, body, .resource.show .property dd, .value.exporters li a
+   {
+      font-size: 1rem !important;
+   }
+   .objektmerkenabstand 
+   {
+      margin-bottom: 30px !important;
+   }
+   .block.resource-block.block-previous-next
+   {
+      margin:0 !important;
    }
 }
