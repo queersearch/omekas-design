@@ -39,7 +39,7 @@ p
 a
 {
    color: #000;
-   background-color: #transparent;
+   background-color: transparent;
    border-bottom: 2px solid black;
    padding-bottom: 2px;
    display: inline;
@@ -159,8 +159,14 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
 }
 #facets-reset, #facets-apply, .field-meta label, [type=submit], [type=submit]:focus
 {
-background-color: #a95eff !important;
+   background-color: #a95eff !important;
 }
+
+.layout-toggle
+{
+   display: none;
+}
+
 
 /*******************************************/
 /********* TOP-NAVIGATION ************/
@@ -283,6 +289,10 @@ h1.site-title
 {
    width:100%;
 }
+.schnelleinstieg-suche
+{
+   margin-top:20px
+}
 .page.willkommen.dropdown-menu .form-search fieldset 
 {
   width: 30%;
@@ -343,8 +353,39 @@ h1.site-title
    border: none;
    margin-left: 10px;
 }
+.page.willkommen.dropdown-menu .preview-block .resource-list, .page.willkommen.dropdown-menu .preview-block.resource-list .resource
+{
+   border:none;
+}
 
+/* Item-sets */
+#kacheln-hp
+{
+   margin-top:20px;
+}
 
+.kachel-buecher, .kachel-zeitschriften, .kachel-plakate,  .kachel-fotosammlung-mhg
+{
+   width:300px;
+   height: 300px;
+   margin-right: 30px;
+   padding: 10px;
+   float: left;
+   background-color:#E1EBEE;
+   margin-bottom:20px;
+}
+
+.kachel-buecher img, .kachel-zeitschriften img, .kachel-plakate img,  .kachel-fotosammlung-mhg img
+{
+   max-height:85%;
+   object-fit:contain;
+}
+
+.kachel-buecher a, .kachel-buecher a:hover, .kachel-zeitschriften a, .kachel-zeitschriften  a:hover, .kachel-plakate a, .kachel-plakate a:hover, .kachel-fotosammlung-mhg a, .kachel-fotosammlung-mhg a:hover
+{
+   font-size:1.9375rem;
+   border:none;
+}
 
 
 /* GRAPH AUF HOME */
@@ -607,8 +648,8 @@ margin: 0 5px;
 }
 
 
-/* Formularende */
-.search-results-count, .noresults
+/* FORMULARENDE */
+.noresults
 {
 display: none;
 }
@@ -618,7 +659,7 @@ display: none;
 }
 
 
-/* ERGENISLISTE */
+/* ERGEBNISLISTE */
 
 .search-results .resource-list .resource-heading 
 {
@@ -627,11 +668,19 @@ display: none;
 
 .resource-list .resource
 {
-border-bottom: 4px solid #9ee2cc;
+   border-bottom: 4px solid #9ee2cc;
 }
 .resource-list 
 {
-border-top: 4px solid #9ee2cc;
+   border-top: 4px solid #9ee2cc;
+}
+.resource-list .resource-link img 
+{
+   width: 100% !important;
+}
+.omeka-pagination
+{
+   width:100%;
 }
 
 /***********************************************************/
