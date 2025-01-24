@@ -917,6 +917,20 @@ footer
       width:98% !important;
       padding:5px;
    }
+   .page.willkommen.dropdown-menu .form-search fieldset
+   {
+      width: 80% !important;
+   }
+   .page.willkommen.dropdown-menu .form-search input[type="search"]
+   {
+      width:100%;
+   }
+   .page.willkommen.dropdown-menu [type=submit]
+   {
+      font-size: 1rem !important;
+      margin-top: 90px !important;
+   }
+   
 /* SUCHE */
    .form-search fieldset
    {
