@@ -424,7 +424,7 @@ dl dt, #objektmerken, #objektmerken a
 /* Breite verskleinern */
 .item #content
 {
-   max-width:80% !important;
+   max-width:75rem !important;
 }
 
 /* LIGHTBOX */
