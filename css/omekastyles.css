@@ -115,7 +115,18 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
    outline-style: none;
    outline-width: 0px;
 }
-
+dl dt, dd
+{
+   font-size: 1.3rem;
+}
+.property dd
+{
+   font-size: 1.5rem;
+}
+.resource-meta .resource-link .resource-name
+{
+   font-size: 1.3em;
+}
 
 /* SPECIAL TEXT-STYLES */
 
@@ -184,6 +195,11 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
    background-color: #a95eff !important;
    color: #ffffff;
 }
+.browse-controls.closed 
+{
+   float: right;
+   margin-bottom: 50px;
+}
 
 /*******************************************/
 /********* TOP-NAVIGATION ************/
@@ -201,7 +217,7 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
 }
 h1.site-title
 {
-    margin: 0 0 0 10px;
+    margin: 0;
 }
 .site-title img
 {
@@ -434,11 +450,7 @@ dl dt, #objektmerken, #objektmerken a
    font-size: 1.3rem;
 }
 /* Metadaten Werte */
-.resource.show .property dd
-{
-   font-size: 1.5rem;
-   /*margin-bottom: 15px;*/
-}
+
 h3.label
 {
    display: none;
@@ -576,11 +588,49 @@ padding-right: 20px;
 }
 
 
+/* MEDIENSEITEN */
+.media.resource.show.dropdown-menu #content
+{
+   padding-left:10px;
+}
+
+/***********************************************************/
+/***************** ITEM SETS ************************/
+/***********************************************************/
+
+
+.value.resource.items img
+{
+   display: none;
+}
+
+.wrapper-itemset
+{
+   padding-left: 10px;
+}
+.wrapper-itemset dl div:first-child
+{
+   display: none;
+}
+h1.objektefiltern
+{
+   margin-left:10px;
+}
+.item.resource.browse.dropdown-menu .resource-meta.media-object-section
+{
+   padding-left: 2px;
+}
+
+
 
 
 /***********************************************************/
 /***************** Erweiterte SUCHE ************************/
 /***********************************************************/
+#search-page
+{
+   margin-left: 10px;
+}
 #search-page h2
 {
    display: none;
@@ -602,7 +652,10 @@ padding-right: 20px;
    margin-top: 40px;
    color: #000000;
    margin-left: 0px;
+   padding-left: 0;
 }
+
+
 a.advanced-search
 {
    display: none;
@@ -619,14 +672,12 @@ a.advanced-search
 /* FILTER */
 #search-filters
 {
-   margin-left: -7px;
    margin-top: 75px !important;
 }
 .search-filters-advanced::before
 {
    content: "oder Filter  nutzen ";
    font-size:1.9375rem;
-   margin-left: 5px;
 }
 
 /* Such-Buttons */
@@ -638,6 +689,15 @@ a.advanced-search
 {
    position:relative;
    top: 25px;
+}
+#search-filters .filter
+{
+   padding: 6px 6px 6px 0;
+}
+
+#search-filters .filter select, #search-filters .filter input
+{
+   margin-left: 0;
 }
 
 /* Ersten Bool ausblenden */
