@@ -947,6 +947,14 @@ footer
    {
       font-size: 2rem !important;
    }
+   dl dt, dd
+   {
+      font-size: 1rem !important;
+   }
+.property dd
+{
+   font-size: 1.5rem;
+}
 
  /* MENU */
 
