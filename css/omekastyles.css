@@ -1,6 +1,12 @@
 /******************************************/
 /**************  Defaults *****************/
 /****************************************/
+body
+{
+   font-weight: 400;
+   font-family: "Lato", sans-serif;
+}
+
 @media print, screen and (min-width: 40em)
 {
    body:not(.browse) #content
@@ -12,12 +18,25 @@
 #content
 {
    min-height: 70vh;
-   padding-left: 0
+   padding-left: 0;
+   max-width: 80%;
 }
-body
+
+.block.block-heading 
 {
-   font-weight: 400;
-   font-family: "Lato", sans-serif;
+   padding-left:10px;
+}
+
+.blocks
+ {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right:0;
 }
 
 /******************************************/
@@ -39,7 +58,7 @@ p
 a
 {
    color: #000;
-   background-color: #transparent;
+   background-color: transparent;
    border-bottom: 2px solid black;
    padding-bottom: 2px;
    display: inline;
@@ -53,7 +72,6 @@ a:hover
 {
    background: #fff;
    color: #000;
-   /*font-size: 3.5rem;*/
    font-size: 3rem;
    font-family: "Lato", sans-serif;
    font-weight: 500;
@@ -94,12 +112,23 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
 :focus-visible, :focus
 {
    outline-color: transparent;
-   outline-style: auto;
+   outline-style: none;
    outline-width: 0px;
 }
+dl dt, dd
+{
+   font-size: 1.3rem;
+}
+.property dd
+{
+   font-size: 1.5rem;
+}
+.resource-meta .resource-link .resource-name
+{
+   font-size: 1.3em;
+}
 
-
-/* SPECIAL TEXT-STYLES*/
+/* SPECIAL TEXT-STYLES */
 
 .site-title-label
 {
@@ -110,23 +139,18 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
    line-height: 4rem;
    text-transform: uppercase;
 }
-/* BUTTONS */
 
+/* BUTTONS */
 [type=button]:hover, [type=button]:focus
 {
    color: #d6a7ff !important;
    background-color: #fff;
 }
-
-.browse-controls input, .browse-controls select, .browse-controls button, .browse-controls .button, [type=button], [type=button][disabled], [type=submit]
+.button:hover, .button:focus
 {
-   /*background-color: #000;
-   color: #fff;*/
-}
-
-[type=submit]:hover, [type=submit]:focus, [type=button]:hover, [type=button]:focus 
-{
-   /*background-color: #000;*/
+   background-color: transparent;
+   color: #000;
+   border: 1px transparent solid;
 }
 .button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus
 {
@@ -145,7 +169,7 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
 }
 .facets-reset
 {
-   color: #fff ;
+   color: #ffffff;
    vertical-align: middle;
    margin: 0 0 1rem 0;
    padding: .85em 1em;
@@ -159,7 +183,22 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
 }
 #facets-reset, #facets-apply, .field-meta label, [type=submit], [type=submit]:focus
 {
-background-color: #a95eff !important;
+   background-color: #a95eff !important;
+}
+.layout-toggle
+{
+   display: none;
+}
+[type=button]:hover.browse-toggle.closed, [type=button]:focus.browse-toggle.closed, [type=button].browse-toggle.closed,
+[type=button]:hover.browse-toggle.open, [type=button]:focus.browse-toggle.open, [type=button].browse-toggle.open
+{
+   background-color: #a95eff !important;
+   color: #ffffff;
+}
+.browse-controls.closed 
+{
+   float: right;
+   margin-bottom: 50px;
 }
 
 /*******************************************/
@@ -169,7 +208,7 @@ background-color: #a95eff !important;
 {
    margin-left: auto;
    margin-right: auto;
-   max-width: 75rem;
+   max-width: 80%;
    border-bottom: 2px solid #000;
 }
 .top-bar .top-bar-left
@@ -178,7 +217,7 @@ background-color: #a95eff !important;
 }
 h1.site-title
 {
-    margin: 0 0 0 10px;
+    margin: 0;
 }
 .site-title img
 {
@@ -193,12 +232,16 @@ h1.site-title
    margin-top: 3rem;
 }
 .top-bar form
-{    
+{
    display: none;
 }
 .top-bar .top-bar-right
 {
       margin-left: 5%;
+}
+.top-bar-right .search
+{
+   display: none;
 }
 .menu
 {
@@ -214,15 +257,9 @@ h1.site-title
 /***  SUCHERGEBNIS FILTER NACH OBJEKTTYPEN VON STARTSEITE ******/
 /**************************************************************/
 
-.item.resource.browse.dropdown-menu #content h2  span
+.item.resource.browse.dropdown-menu #content h2 span
 {
-   display:none;
-}
-.item.resource.browse.dropdown-menu #content h2::after
-{
-   content: "Suchergebnis";
-   display: block;
-   float: left;
+   display:block;
 }
 .filter-label
 {
@@ -235,7 +272,7 @@ h1.site-title
    padding: 0 0 0 15px;
    font-size: 2.5rem;
 }
-.resource-list .resource-link img
+.item.resource.browse.dropdown-menu .resource-list .resource-link img
 {
    width: 15%;
 }
@@ -251,17 +288,55 @@ h1.site-title
 /* BESCHREIBUNGSTEXT AUSBLENDEN */
 .item.resource.media-object .description.full
 {
-display: none;
+   display: none;
 }
 
 
 /********************************************/
 /****************  HOME ******************/
 /******************************************/
+.introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
+{
+   max-width:100%;
+   padding: 10px;
+}
+.introtext p, .institutionen p, .text-ueber p
+{
+   font-size:1.5rem;
+}
+
+/* INTRO*/
 .introtext
 {
    background-color: #f99a98;
-   padding: 5px;
+}
+
+/* ABSCHNITT SUCHE */
+.block.block-search
+{
+   width:100%;
+}
+.schnelleinstieg-suche
+{
+   margin-top:20px;
+}
+.page.willkommen.dropdown-menu .form-search fieldset
+{
+  width: 30%;
+  margin:0;
+}
+.page.willkommen.dropdown-menu .form-search fieldset .field
+{
+  width: 100%;
+
+}
+.page.willkommen.dropdown-menu #form-search .field-meta
+{
+   margin-bottom: 10px;
+}
+.page.willkommen.dropdown-menu #search-filters
+{
+   display: none !important;
 }
 .schnelleinstieg-suche
 {
@@ -272,13 +347,17 @@ display: none;
    background-color: #9ee2cc;
    margin-bottom: 0 !important;
 }
-.suchein-home, .page.willkommen.dropdown-menu .field-meta label
+
+.schnelleinstieg-headline h1
 {
-   font-size: 1.5rem;
-   font-family: "Lato", sans-serif;
-   background-color:#000;
-   color: #fff;
-   padding: 3px;
+   margin-bottom: 0 !important;
+}
+
+.page.willkommen.dropdown-menu .page-layout-normal .block
+{
+   width:100%;
+   float:none;
+   margin:0 0 20px 0;
 }
 .page.willkommen.dropdown-menu .fieldset, #advanced-search .field
 {
@@ -294,63 +373,87 @@ display: none;
 }
 .page.willkommen.dropdown-menu [type=submit]
 {
-   margin-top: 15px;
+   margin-top: 63px;
    font-size: 1.5rem;
    font-family: "Lato", sans-serif;
-   padding: 3px;
+   padding: 6px;
    border: none;
+   margin-left: 10px;
 }
-.introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
+.page.willkommen.dropdown-menu .preview-block .resource-list, .page.willkommen.dropdown-menu .preview-block.resource-list .resource
 {
-   width:80%;
-   padding: 5px;
-}
-.block.block-search
-{
-   width:100%;
-}
-.introtext p, .institutionen p, .text-ueber p
-{
-   font-size:1.5rem;
+   border:none;
 }
 
-/* GRAPH AUF HOME */
-/* DERZEIT NICHT AKTIV */
-.block-d3Graph, .block .d3-graph
+/* Item-sets */
+#kacheln-hp
 {
-  width: 100% !important;
+   margin-top:20px;
 }
+
+.kachel-buecher, .kachel-zeitschriften, .kachel-plakate,  .kachel-fotosammlung-mhg, .kachel-biarchiv
+{
+   width:300px;
+   height: 300px;
+   margin-right: 30px;
+   padding: 10px;
+   float: left;
+   background-color:#E1EBEE;
+   margin-bottom:20px;
+}
+
+.kachel-buecher img, .kachel-zeitschriften img, .kachel-plakate img,  .kachel-fotosammlung-mhg img, .kachel-biarchiv img
+{
+   max-height:85%;
+   object-fit:contain;
+}
+
+.kachel-buecher a, .kachel-buecher a:hover, .kachel-zeitschriften a, .kachel-zeitschriften  a:hover, .kachel-plakate a, .kachel-plakate a:hover, .kachel-fotosammlung-mhg a, .kachel-fotosammlung-mhg a:hover,
+.kachel-biarchiv a, .kachel-biarchiv a:hover
+{
+   font-size:1.9375rem;
+   border:none;
+}
+
+/**********************************************************/
+/************  INFO ***************/
+/********************************************************/
+
+
+
+
+
+
+
 
 /**********************************************************/
 /************  OBJEKT EINZELANSICHT ***************/
 /********************************************************/
 
 /* CONTEN EINZELSEITEN IN DIE MITTE RÜCKEN */
-
-@media print, screen and (min-width: 40em) 
+@media print, screen and (min-width: 40em)
 {
-    body:not(.browse) #content 
+    body:not(.browse) #content
 {
-        padding-left: 5px;
-        margin: auto !important;
+        padding-left: 0;
+        margin: auto;
+        max-width:80%;
+        padding-right: 0px;
     }
 }
+
 /* Überschriften einzelner Metadaten */
 dl dt, #objektmerken, #objektmerken a
 {
    color: #FF6a67 !important;
    margin-bottom: 0;
+   font-size: 1.3rem;
 }
 /* Metadaten Werte */
-.resource.show .property dd 
+
+h3.label
 {
-   font-size: 1.5rem;
-   margin-bottom: 15px;
-}
-/* Breite verskleinern */
-.item #content
-{
-   max-width:80% !important;
+   display: none;
 }
 
 /* LIGHTBOX */
@@ -367,15 +470,27 @@ dl dt, #objektmerken, #objektmerken a
    outline: 0px solid #000000;
 }
 
-/* SELECTION */
 
+/* LINKE SPALTE */
+.spalte-links
+{
+float: left;
+width:40%;
+padding-right: 20px;
+}
+
+/* SELECTION */
+.selection.browse
+{
+   margin-top: 10px;
+   display: inline-block;
+}
 #objektmerken, #objektmerken a
 {
-   font-size:1rem;
+   font-size:1.3rem;
    margin-top: 20px;
    border:none;
    color: gray;
-   font-weight: bold;
 }
 .objektmerkenabstand
 {
@@ -389,13 +504,9 @@ dl dt, #objektmerken, #objektmerken a
 {
    top: 16px;
 }
-.selection.browse 
+.selection.browse
 {
    margin-left: 10px;
-}
-h3.label
-{
-   display: none;
 }
 
 /* WEITER- UND ZURÜCKPFEILE */
@@ -403,29 +514,7 @@ h3.label
 {
    margin-bottom: 20px;
    margin-top: 50px;
-   text-align: right;
-}
-.block.resource-block.block-previous-next a.button:first-child
-{
-   background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-links-13-20.jpeg");
-   height: 30px;
-   width:13px;
-   margin-right: -5px;
-   margin-left:-10px;
-   border:none;
-   color:transparent;
-   background-repeat: no-repeat;
-   background-position-y: 10px;
-}
-.block.resource-block.block-previous-next a.button:last-child
-{
-   background-image: url("https://test.katalog.queersearch.org/files/asset/pfeil-nach-rechts-13-20.jpeg");
-   height: 30px;
-   width:13px;
-   border:none;
-   color:transparent;
-   background-repeat: no-repeat;
-   background-position-y: 10px;
+   text-align: left;
 }
 .block.resource-block.block-previous-next a.button:hover
 {
@@ -433,18 +522,49 @@ h3.label
 }
 .vorzurueck
 {
-   font-size:1.5rem;
+   font-size: 1.5rem;
 }
 .vorzurueck a
 {
-border: none;
+   border: none;
+}
+.backtosearch
+{
+   margin-top: 20px;
 }
 .backtosearch a
 {
-font-size:1.5rem;
-border: none;
-text-align:right;
-display: block;
+   font-size:1.5rem;
+   border: none;
+   display: block;
+}
+
+/* EXPORT */
+.value.exporters li a
+{
+   font-size: 1.3rem;
+   color: #FF6a67;
+   border: none;
+}
+.bulk-export ul
+{
+   margin-left: 0;
+}
+
+/* RECHTE SPALTE */
+.spalte-rechts
+{
+   float: left;
+   width: 60%;
+   margin-top: 40px;
+}
+.item.resource.show.dropdown-menu .resource-title
+{
+   display: none;
+}
+.item.resource.browse.item-set.dropdown-menu .resource-list .resource-link img
+{
+   width: 15% !important;
 }
 
 /* LOGOS DATENGEBER*INNEN AUSBLENDEN */
@@ -454,7 +574,6 @@ display: block;
 }
 
 /* METADATA BROWSE */
-
 .resource.show .resource-link img
 {
    display:none;
@@ -468,71 +587,138 @@ display: block;
    display: inline;
 }
 
-/* DATENEXPORT MÖGLICHKEIT */
-.bulk-export
+
+/* MEDIENSEITEN */
+.media.resource.show.dropdown-menu #content
 {
-   margin-top:70px;
+   padding-left:10px;
 }
-.bulk-export ul
+
+/***********************************************************/
+/***************** ITEM SETS ************************/
+/***********************************************************/
+
+
+.value.resource.items img
 {
-   margin-left: 0;
+   display: none;
 }
+
+.wrapper-itemset
+{
+   padding-left: 10px;
+}
+.wrapper-itemset dl div:first-child
+{
+   display: none;
+}
+h1.objektefiltern
+{
+   margin-left:10px;
+}
+.item.resource.browse.dropdown-menu .resource-meta.media-object-section
+{
+   padding-left: 2px;
+}
+
+
 
 
 /***********************************************************/
 /***************** Erweiterte SUCHE ************************/
 /***********************************************************/
-
+#search-page
+{
+   margin-left: 10px;
+}
+#search-page h2
+{
+   display: none;
+}
+.search-page.resource.browse.dropdown-menu .search-form
+{
+   display:block;
+}
 .search-page .field-meta
 {
-margin-bottom: 11px;
-margin-top: -11px;
+   margin-bottom: 11px;
+   margin-top: -11px;
 }
 
-#search-filters .filter select:nth-of-type(1)
+#form-search .field-meta label
 {
-   min-width:80px;
+   font-size:1.9375rem;
+   background-color:transparent !important;
+   margin-top: 40px;
+   color: #000000;
+   margin-left: 0px;
+   padding-left: 0;
 }
 
-#search-filters .filter select, #search-filters .filter input, .form-search input[type="search"]
-{
-border: 1px #a95eff solid !important;
-}
 
-#search-filters 
+a.advanced-search
 {
-   margin-top: 12px;
-}
-.omeka-pagination form, .omeka-pagination .button-group 
-{
-   white-space: nowrap;
-}
-.search-facets 
-{
-   min-width: 400px;
-}
-.search-form-buttons
-{
-   vertical-align:bottom;
-}
-.form-search button.search-submit 
-{
-   position:relative;
-   top: 25px;
+   display: none;
 }
 
 /* VOLLTEXTSUCHE */
-.form-search input[type="search"] 
+.form-search input[type="search"]
 {
    height: 38px;
    min-height: 38px;
    margin-top: -4px;
 }
 
-a.advanced-search
+/* FILTER */
+#search-filters
 {
-   display: none;
+   margin-top: 75px !important;
 }
+.search-filters-advanced::before
+{
+   content: "oder Filter  nutzen ";
+   font-size:1.9375rem;
+}
+
+/* Such-Buttons */
+.search-form-buttons
+{
+   vertical-align:bottom;
+}
+.form-search button.search-submit
+{
+   position:relative;
+   top: 25px;
+}
+#search-filters .filter
+{
+   padding: 6px 6px 6px 0;
+}
+
+#search-filters .filter select, #search-filters .filter input
+{
+   margin-left: 0;
+}
+
+/* Ersten Bool ausblenden */
+#search-filters .filter select[name="filter[0][join]"]
+{
+   display:none;
+}
+#search-filters .filter:first-of-type
+{
+   padding-left:0px ;
+}
+#search-filters .filter select:nth-of-type(1)
+{
+   min-width:80px;
+}
+#search-filters .filter select, #search-filters .filter input, .form-search input[type="search"]
+{
+   border: 1px #a95eff solid !important;
+}
+
+/* FACETTEN */
 .facets-list
 {
    margin-left:0;
@@ -541,15 +727,50 @@ a.advanced-search
 {
    padding: .5em;
 }
+.search-facets
+{
+   min-width: 40%;
+   padding: 0;
+}
+.facet-items.chosen-select[name="facet[dcterms_title][from]"], .facet-items.chosen-select[name="facet[dcterms_title][to]"]
+{
+   margin: 0 5px;
+}
 
-/* ERGENISLISTE */
+
+/* FORMULARENDE */
+.noresults
+{
+   display: none;
+}
+.omeka-pagination form, .omeka-pagination .button-group
+{
+   white-space: nowrap;
+}
+
+
+/* ERGEBNISLISTE */
+
+.search-results .resource-list .resource-heading
+{
+   font-weight: normal;
+}
+
 .resource-list .resource
 {
-border-bottom: 4px solid #9ee2cc;
+   border-bottom: 4px solid #9ee2cc;
 }
-.resource-list 
+.resource-list
 {
-border-top: 4px solid #9ee2cc;
+   border-top: 4px solid #9ee2cc;
+}
+.search-results .resource-list .resource-link img
+{
+   width: 75% !important;
+}
+.omeka-pagination
+{
+   width:100%;
 }
 
 /***********************************************************/
@@ -560,7 +781,6 @@ border-top: 4px solid #9ee2cc;
 {
    display: unset;
 }
-
 #reference-headings
 {
    padding-inline-start: 0px;
@@ -577,6 +797,7 @@ footer
 {
    border-top: 2px solid #000;
    padding: 5px 0 0 0;
+   max-width: 80%;
 }
 
 
@@ -596,25 +817,26 @@ footer
 {
    .title-bar
    {
-      display: block !important;
+      display: block;
       float: right;
    }
-   .site-title img 
+   .site-title img
    {
       max-width: 30%;
    }
-    header .top-bar
+   header .top-bar
     {
-        padding: 20px 20px 20px 0;
+       padding: 20px 20px 20px 0;
+       max-width: 80%;
     }
    .top-bar .top-bar-left
     {
-        max-width: 100% !important;
-        display:block !important;
+       max-width: 100%;
+       display:block;
     }
    .top-bar-right
    {
-      display: none !important;
+      display: none;
    }
    /*BURGER*/
    .title-bar button, .title-bar button:hover
@@ -629,10 +851,10 @@ footer
    {
       padding: 10px;
    }
-   .menu .active>a, .menu a, a.suchindex-home 
+   .menu .active>a, .menu a, a.suchindex-home
    {
-      font-size: 1.7rem !important;
-      line-height: 2rem !important;
+      font-size: 1.7rem;
+      line-height: 2rem;
    }
    .search
     {
@@ -641,9 +863,9 @@ footer
    /* HOME */
     .page.willkommen.dropdown-menu .form-search fieldset
    {
-      margin: 11px 0 36px;
+      margin: 11px 0 36px 0;
    }
-    .page.willkommen.dropdown-menu .form-search button.search-submit 
+    .page.willkommen.dropdown-menu .form-search button.search-submit
    {
       margin-left: 10px;
    }
@@ -656,8 +878,8 @@ footer
 {
    body:not(.browse) #content
    {
-      padding: 0 !important;
-      margin: 1rem !important;
+      padding: 0;
+      margin: 1rem;
     }
    .menu .active>a, .menu a, a.suchindex-home
    {
@@ -670,7 +892,7 @@ footer
    }
    .title-bar
    {
-      display:block !important;
+      display:block;
       float: right;
    }
 
@@ -693,11 +915,11 @@ footer
     }
    .schnelleinstieg-headline,  .schnelleinstieg-headline h1
    {
-      margin-bottom:0 !important;
+      margin-bottom:0;
    }
    .block.block-search
    {
-      margin-top: 0 !important;
+      margin-top: 0;
       padding-top: 2.5rem;
    }
 }
@@ -708,6 +930,15 @@ footer
 /*****************************************************************/
 @media screen and (max-width:450px)
 {
+   .stack
+   {
+      margin-left:10px;
+   }
+   .item #content, #content, .top-bar, footer
+   {
+      max-width: 98% !important;;
+       margin: 0 auto !important;;
+   }
    p
    {
       font-size: 1rem !important;
@@ -716,16 +947,184 @@ footer
    {
       font-size: 2rem !important;
    }
+   dl dt, dd
+   {
+      font-size: 1rem !important;
+   }
+.property dd
+{
+   font-size: 1.5rem;
+}
+
+ /* MENU */
+
+   .menu .active>a, .menu a, a.suchindex-home
+   {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+   }
+
 /*LOGO*/
     .site-title img
     {
        max-width: 45%;
        margin-left: 0.625rem;
     }
+
+   /* BUTTONS UND INPUTS */
+   [type=text], [type=password], [type=date], [type=datetime], [type=datetime-local], [type=month], [type=week], [type=email], [type=number], [type=search], [type=tel], [type=time], [type=url], [type=color], textarea, select
+   {
+      padding: 0.1rem;
+      height: 2rem;
+   }
+
 /* HOME */
    .introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
    {
-      width:98% !important;
+      max-width:100%;
       padding:5px;
+   }
+   .page.willkommen.dropdown-menu .form-search fieldset
+   {
+      width: 80% !important;
+      margin:0;
+   }
+   .page.willkommen.dropdown-menu .form-search input[type="search"]
+   {
+      width:100%;
+   }
+   .page.willkommen.dropdown-menu [type=submit]
+   {
+      font-size: 1rem !important;
+      margin-top: 85px !important;
+   }
+   .page.willkommen.dropdown-menu .page-layout-normal .block
+   {
+      margin-bottom:15px;
+      margin-top:15px;
+   }
+   .page.willkommen.dropdown-menu .block.block-search
+   {
+      margin: 0;
+      padding:0;
+   }
+
+
+/* ERWEITERTE SUCHE */
+   .form-search fieldset
+   {
+      margin:0;
+   }
+   .form-search button.search-submit
+   {
+      top: 0px !important;
+   }
+   .form-search input[type="search"]
+   {
+      width: 85%;
+   }
+   #form-search .field-meta label, .search-filters-advanced::before, #search-facets h3
+   {
+      font-size: 1.5rem !important;
+   }
+
+/* Filter */
+
+   #search-filters .filter:first-of-type, #search-filters .filter
+   {
+      width: 95%;
+   }
+   #search-filters .filter select:nth-of-type(1), #search-filters .filter:first-of-type
+   {
+      min-width: 55px !important;
+   }
+   #search-filters .filter select:nth-of-type(2), #search-filters .filter select:nth-of-type(3)
+   {
+      min-width: 70px;
+      width:130px;
+   }
+   #search-filters .filter .field
+   {
+      margin:0;
+   }
+   #search-filters .filter:first-of-type
+   {
+      width: 100%;
+   }
+
+/* Facetten */
+   .search-facets
+   {
+      width: 45%;
+      min-width: 45% !important;
+   }
+   .resource-list search-results-list list a
+   {
+      font-size: 1rem !important;
+   }
+   .facet-items.chosen-select[name="facet[dcterms_title][to]"]
+   {
+      margin: 5px !important;
+   }
+   .facet-select-range span
+   {
+      display: block;
+   }
+
+/* Ergebnis */
+   .search-results-wrapper
+   {
+      margin-top: 70px;
+   }
+   .search-results
+   {
+      margin-top: 74px;
+   }
+   .row-count
+   {
+      display: none;
+   }
+   .search-results .resource-list.list .resource-heading 
+   {
+      flex-basis: 100%;
+      margin-bottom: 10px;
+   }
+   .search-results .resource-list.list .resource-thumbnail 
+   {
+      flex-basis: unset;
+      margin: 10px 0;
+   }
+
+
+   /* EINZELOBJEKTANSICHT*/
+   .spalte-rechts, .spalte-links
+   {
+      float: none !important;
+      width: 100% !important;
+      padding-right:0 !important;
+   }
+   .unselected .selection-icon
+   {
+      background-size: 17px;
+   }
+   #objektmerken, #objektmerken a
+   {
+      margin-top:0 !important;
+   }
+   #objektmerken, #objektmerken a, dl dt, .vorzurueck, .backtosearch a, body, .resource.show .property dd, .value.exporters li a
+   {
+      font-size: 1rem !important;
+   }
+   .objektmerkenabstand
+   {
+      margin-bottom: 15px !important;
+   }
+   .block.resource-block.block-previous-next
+   {
+      margin:0 !important;
+   }
+   .backtosearch
+   {
+      margin-top: 5px !important;
    }
 }
