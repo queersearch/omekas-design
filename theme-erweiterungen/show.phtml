@@ -15,7 +15,7 @@ $this->headLink()->appendStylesheet($this->assetUrl('css/resource-page-blocks.cs
 $fullWidthMainBlockContent = $this->resourcePageBlocks($item, 'full_width_main');
 $fullWidthMainHasBlocks = $fullWidthMainBlockContent->hasBlocks();
 $mainWithSidebarBlockContent = $this->resourcePageBlocks($item);
-$mainWithSidebarHasBlocks= $mainWithSidebarBlockContent->hasBlocks();
+$mainWithSidebarHasBlocks = $mainWithSidebarBlockContent->hasBlocks();
 $leftSidebarBlockContent = $this->resourcePageBlocks($item, 'left');
 $leftSidebarHasBlocks = $leftSidebarBlockContent->hasBlocks();
 $rightSidebarBlockContent = $this->resourcePageBlocks($item, 'right');
@@ -28,62 +28,82 @@ $valueLang = $filterLocale ? [$lang, ''] : null;
 
 
 <div class="resource-title">
-<?php echo $this->pageTitle($item->displayTitle(null, $valueLang), 2); ?>
-<h3 class="label"><?php echo $translate('Item'); ?></h3>
+    <?php echo $this->pageTitle($item->displayTitle(null, $valueLang), 2); ?>
+    <h3 class="label"><?php echo $translate('Item'); ?></h3>
 </div>
 
 <div class="<?php echo ($showLayout == 'inline') ? 'inline' : 'stack'; ?>">
-
-<!-- MEINE EINFÜGUNG -->
-<div id="objektmerken">
-
-    <?php $this->trigger('view.show.before'); ?>
-
-
-<!-- MEINE EINFÜGUNG -->
-    Dieses Objekt merken</span><?php echo $this->selectionLinkBrowse(); ?></div>
-    <div class="objektmerkenabstand"></div>
-<!-- ENDE MEINE EINFÜGUNG -->
-
+    <!-- ENDE MEINE EINFÜGUNG -->
     <?php if ($fullWidthMainHasBlocks): ?>
-    <div class="full-width-main">
-        <?php echo $fullWidthMainBlockContent->getBlocks(); ?>
-        
+        <div class="full-width-main">
+
+            <!-- MEINE EINFÜGUNG -->
+            <!-- 2 Divs, um die Seite in zwei Spalten zu gliedern -->
 
 
-<!-- EINFÜGUNG ZURÜCK- UND WEITER-PFEILE -->
-<?php
-$plugins = $this->getHelperPluginManager();
-$hasPreviousNext = $plugins->has('previousNext');
-?>
-<?php if ($hasPreviousNext): ?>
-<div class="block resource-block block-previous-next">
+            <div class="spalte-links">
+                <?php echo $fullWidthMainBlockContent->getBlocks(); ?>
 
-    <?php if ($previous = $this->previousResource($resource)): ?>
-   <!--<?= $previous->link($translate(''), null, ['class' => 'button', 'rel']) ?><span class="vorzurueck">&nbsp;&nbsp;voriges Objekt</span>-->
-       <span class="vorzurueck"><?= $previous->link($translate('〈   voriges Objekt  '), null, ['class' => 'previous-item']) ?></span>
+            </div>
+        </div>
+        <div class="spalte-rechts">
+            <!-- ENDE MEINE EINFÜGUNG -->
+            <!-- MEINE EINFÜGUNG -->
+            <div id="objektmerken">
+                <?php $this->trigger('view.show.before'); ?>
+                <!-- MEINE EINFÜGUNG -->
+                Dieses Objekt merken</span>
+                <?php echo $this->selectionLinkBrowse(); ?>
+            </div>
+            <div class="objektmerkenabstand"></div>
+
+
+            <!-- EINFÜGUNG ZURÜCK- UND WEITER-PFEILE -->
+            <?php
+            $plugins = $this->getHelperPluginManager();
+            $hasPreviousNext = $plugins->has('previousNext');
+            ?>
+            <?php if ($hasPreviousNext): ?>
+                <div class="block resource-block block-previous-next">
+                    <?php if ($previous = $this->previousResource($resource)): ?>
+                        <!--<?= $previous->link($translate(''), null, ['class' => 'button', 'rel']) ?><span class="vorzurueck">&nbsp;&nbsp;voriges Objekt</span>-->
+                        <span
+                            class="vorzurueck"><?= $previous->link($translate('〈   voriges Objekt  '), null, ['class' => 'previous-item']) ?></span>
+                    <?php endif; ?>
+                    <?php if ($next = $this->nextResource($resource)): ?><!--<span class="vorzurueck">&nbsp;&nbsp;nächstes Objekt&nbsp;&nbsp;</span>-->
+                        <!--<?= $next->link($translate(''), null, ['class' => 'button', 'rel']) ?>-->
+                        <span
+                            class="vorzurueck">&nbsp;&nbsp;&nbsp;<?= $next->link($translate('nächstes Objekt   〉'), null, ['class' => 'next-item']) ?></span>
+                    <?php endif; ?>
+                    <!-- ENDE EINFÜGUNG ZURÜCK- UND WEITER-PFEILE -->
+
+                    <!-- Back-Button zur Suchergebnisliste -->
+                    <?php
+                    if ((strpos($_SERVER['HTTP_REFERER'] ?? '', '/search') !== false)) {
+                        $_SESSION['search'] = $_SERVER['HTTP_REFERER'];
+                    }
+                    ?>
+
+                    <?php if (!empty($_SESSION['search'])): ?>
+                        <a id="back-button" href="<?php echo $_SESSION['search']; ?>">
+                            <div class="backtosearch">〈〈 &nbsp; zurück zum Suchergebnis
+                        </a>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <!-- MEINE EINFÜGUNG -->
+            <!-- Div-Ende -->
+        </div>
+        <!-- ENDE MEINE EINFÜGUNG -->
 
     <?php endif; ?>
-
-    
-    <?php if ($next = $this->nextResource($resource)): ?><!--<span class="vorzurueck">&nbsp;&nbsp;nächstes Objekt&nbsp;&nbsp;</span>-->
-    <!--<?= $next->link($translate(''), null, ['class' => 'button', 'rel']) ?>-->
-        <span class="vorzurueck">&nbsp;&nbsp;&nbsp;<?= $next->link($translate('nächstes Objekt   〉'), null, ['class' => 'next-item']) ?></span>
-
-    <?php endif; ?>
-
-<!-- ENDE EINFÜGUNG ZURÜCK- UND WEITER-PFEILE -->
-
-</div>
 <?php endif; ?>
 
-    </div>
-    <?php endif; ?>
 
+<?php if ($mainWithSidebarHasBlocks || $leftSidebarHasBlocks || $rightSidebarHasBlocks): ?>
 
-    <?php if ($mainWithSidebarHasBlocks || $leftSidebarHasBlocks || $rightSidebarHasBlocks): ?>
-    
-    <?php 
+    <?php
     if ($leftSidebarHasBlocks && $rightSidebarHasBlocks) {
         $sidebarWidth = '3';
         $mainWidth = '6';
@@ -92,39 +112,27 @@ $hasPreviousNext = $plugins->has('previousNext');
         $mainWidth = '8';
     }
     ?>
-    
+
     <div class="grid-x grid-margin-x">
         <?php if ($leftSidebarHasBlocks): ?>
-        <div class="left-sidebar cell medium-<?php echo $sidebarWidth; ?>">
-            <?php echo $leftSidebarBlockContent->getBlocks(); ?>
-        </div>
+            <div class="left-sidebar cell medium-<?php echo $sidebarWidth; ?>">
+                <?php echo $leftSidebarBlockContent->getBlocks(); ?>
+            </div>
         <?php endif; ?>
 
         <?php if ($mainWithSidebarHasBlocks): ?>
-        <div class="main-with-sidebar cell medium-<?php echo $mainWidth; ?>">
-            <?php echo $mainWithSidebarBlockContent->getBlocks(); ?>
-        </div>
+            <div class="main-with-sidebar cell medium-<?php echo $mainWidth; ?>">
+                <?php echo $mainWithSidebarBlockContent->getBlocks(); ?>
+            </div>
         <?php endif; ?>
 
         <?php if ($rightSidebarHasBlocks): ?>
-        <div class="right-sidebar cell medium-<?php echo $sidebarWidth; ?>">
-            <?php echo $rightSidebarBlockContent->getBlocks(); ?>
-        </div>
+            <div class="right-sidebar cell medium-<?php echo $sidebarWidth; ?>">
+                <?php echo $rightSidebarBlockContent->getBlocks(); ?>
+            </div>
         <?php endif; ?>
     </div>
-    <?php endif; ?>
-    <!--MEINE AUSKOMMENTIERUNG <?php $this->trigger('view.show.after'); ?>-->
-
-
-
-<!-- Back-Button zur Suchergebnisliste -->
-<?php
-   if((strpos($_SERVER['HTTP_REFERER'] ?? '', '/search') !== false)){
-      $_SESSION['search'] = $_SERVER['HTTP_REFERER'];
-   }
-?>
-
-<?php if (! empty($_SESSION['search'])): ?>
-   <a id="back-button" href="<?php echo $_SESSION['search']; ?>"><div class="backtosearch">〈〈 &nbsp; zurück zum Suchergebnis</a></div>
 <?php endif; ?>
+<!--MEINE AUSKOMMENTIERUNG <?php $this->trigger('view.show.after'); ?>-->
+</div>
 </div>
