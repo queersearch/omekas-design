@@ -5,6 +5,7 @@ body
 {
    font-weight: 400;
    font-family: "Lato", sans-serif;
+   background-color: #eee;
 }
 
 @media print, screen and (min-width: 40em)
@@ -20,6 +21,7 @@ body
    min-height: 70vh;
    padding-left: 0;
    max-width: 80%;
+   background-color: #fff;
 }
 
 .block.block-heading 
@@ -72,11 +74,10 @@ a:hover
 {
    background: #fff;
    color: #000;
-   font-size: 3rem;
-   font-family: "Lato", sans-serif;
+   font-size: 2rem;
+   font-family: Georgia;
    font-weight: 500;
    line-height: 4.6rem;
-   letter-spacing: 1px;
 }
 .menu .active>a, .menu a
 {
@@ -298,7 +299,7 @@ h1.site-title
 .introtext, .institutionen, .orte-headline, .orte-map, .text-ueber, .schnelleinstieg-headline, .schnelleinstieg-typen, .schnelleinstieg-suche
 {
    max-width:100%;
-   padding: 10px;
+   padding: 20px;
 }
 .introtext p, .institutionen p, .text-ueber p
 {
@@ -308,7 +309,7 @@ h1.site-title
 /* INTRO*/
 .introtext
 {
-   background-color: #f99a98;
+   /* background-color: #f99a98; */
 }
 
 /* ABSCHNITT SUCHE */
@@ -344,7 +345,7 @@ h1.site-title
 }
 .schnelleinstieg-suche, .schnelleinstieg-headline
 {
-   background-color: #9ee2cc;
+   /* background-color: #9ee2cc; */
    margin-bottom: 0 !important;
 }
 
@@ -798,6 +799,7 @@ footer
    border-top: 2px solid #000;
    padding: 5px 0 0 0;
    max-width: 80%;
+   background-color: #fff;
 }
 
 
@@ -1009,6 +1011,30 @@ footer
       padding:0;
    }
 
+
+   .container {
+      width: 100%;
+  }
+  .left-column, .right-column {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+  }
+  .right-column img {
+      max-width: 100%;
+      height: auto;
+  }
+  @media (min-width: 601px) {
+      .left-column, .right-column {
+          display: inline-block;
+          vertical-align: top;
+          width: 49%;
+          box-sizing: border-box;
+      }
+      .right-column {
+          width: 49%;
+      }
+  }
 
 /* ERWEITERTE SUCHE */
    .form-search fieldset
