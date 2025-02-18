@@ -4,7 +4,7 @@
 body
 {
    font-weight: 400;
-   font-family: "Lato", sans-serif;
+   font-family: "Lato", Arial, sans-serif;
    background-color: #eee;
 }
 
@@ -53,7 +53,7 @@ h1
 }
 p
 {
-   font-size: 1.5rem;
+   /* font-size: 1.5rem; */
 }
 
 /*  Links */
@@ -74,7 +74,7 @@ a:hover
 {
    background: #fff;
    color: #000;
-   font-size: 2rem;
+   /* font-size: 2rem; */
    font-family: Georgia;
    font-weight: 500;
    line-height: 4.6rem;
@@ -86,7 +86,7 @@ a:hover
 a.metadata-browse-link
 {
    display: inline !important;
-   font-size:60%;
+   /* font-size:60%; */
 }
 .site-title a
 {
@@ -118,22 +118,22 @@ a.uri-value-link:hover, a.uri-value-link:focus, a.uri-value-link:focus-visible
 }
 dl dt, dd
 {
-   font-size: 1.3rem;
+   /* font-size: 1.3rem; */
 }
 .property dd
 {
-   font-size: 1.5rem;
+   /* font-size: 1.5rem; */
 }
 .resource-meta .resource-link .resource-name
 {
-   font-size: 1.3em;
+   /* font-size: 1.3em; */
 }
 
 /* SPECIAL TEXT-STYLES */
 
 .site-title-label
 {
-   font-size: 3.8rem;
+   /* font-size: 3.8rem; */
    font-family: "Lato", sans-serif;
    color: #000000;
    font-weight: 500;
@@ -175,7 +175,7 @@ dl dt, dd
    margin: 0 0 1rem 0;
    padding: .85em 1em;
    font-family: inherit;
-   font-size: .9rem;
+   /* font-size: .9rem; */
    -webkit-appearance: none;
    line-height: 1;
    text-align: center;
@@ -271,7 +271,7 @@ h1.site-title
    background: #fff;
    color: #000;
    padding: 0 0 0 15px;
-   font-size: 2.5rem;
+   /* font-size: 2.5rem; */
 }
 .item.resource.browse.dropdown-menu .resource-list .resource-link img
 {
@@ -303,7 +303,7 @@ h1.site-title
 }
 .introtext p, .institutionen p, .text-ueber p
 {
-   font-size:1.5rem;
+   /* font-size:1.5rem; */
 }
 
 /* INTRO*/
@@ -375,7 +375,7 @@ h1.site-title
 .page.willkommen.dropdown-menu [type=submit]
 {
    margin-top: 63px;
-   font-size: 1.5rem;
+   /* font-size: 1.5rem; */
    font-family: "Lato", sans-serif;
    padding: 6px;
    border: none;
@@ -412,7 +412,7 @@ h1.site-title
 .kachel-buecher a, .kachel-buecher a:hover, .kachel-zeitschriften a, .kachel-zeitschriften  a:hover, .kachel-plakate a, .kachel-plakate a:hover, .kachel-fotosammlung-mhg a, .kachel-fotosammlung-mhg a:hover,
 .kachel-biarchiv a, .kachel-biarchiv a:hover
 {
-   font-size:1.9375rem;
+   /* font-size:1.9375rem; */
    border:none;
 }
 
@@ -448,7 +448,7 @@ dl dt, #objektmerken, #objektmerken a
 {
    color: #FF6a67 !important;
    margin-bottom: 0;
-   font-size: 1.3rem;
+   /* font-size: 1.3rem; */
 }
 /* Metadaten Werte */
 
@@ -488,7 +488,7 @@ padding-right: 20px;
 }
 #objektmerken, #objektmerken a
 {
-   font-size:1.3rem;
+   /* font-size:1.3rem; */
    margin-top: 20px;
    border:none;
    color: gray;
@@ -523,7 +523,7 @@ padding-right: 20px;
 }
 .vorzurueck
 {
-   font-size: 1.5rem;
+   /* font-size: 1.5rem; */
 }
 .vorzurueck a
 {
@@ -535,7 +535,7 @@ padding-right: 20px;
 }
 .backtosearch a
 {
-   font-size:1.5rem;
+   /* font-size:1.5rem; */
    border: none;
    display: block;
 }
@@ -543,7 +543,7 @@ padding-right: 20px;
 /* EXPORT */
 .value.exporters li a
 {
-   font-size: 1.3rem;
+   /* font-size: 1.3rem; */
    color: #FF6a67;
    border: none;
 }
@@ -648,7 +648,7 @@ h1.objektefiltern
 
 #form-search .field-meta label
 {
-   font-size:1.9375rem;
+   /* font-size:1.9375rem; */
    background-color:transparent !important;
    margin-top: 40px;
    color: #000000;
@@ -678,7 +678,7 @@ a.advanced-search
 .search-filters-advanced::before
 {
    content: "oder Filter  nutzen ";
-   font-size:1.9375rem;
+   /* font-size:1.9375rem; */
 }
 
 /* Such-Buttons */
@@ -844,7 +844,7 @@ footer
    .title-bar button, .title-bar button:hover
     {
         padding:0;
-        font-size: 2rem;
+        /* font-size: 2rem; */
         color: #000;
         background-color: #fff;
     }
@@ -855,7 +855,7 @@ footer
    }
    .menu .active>a, .menu a, a.suchindex-home
    {
-      font-size: 1.7rem;
+      /* font-size: 1.7rem; */
       line-height: 2rem;
    }
    .search
@@ -885,7 +885,7 @@ footer
     }
    .menu .active>a, .menu a, a.suchindex-home
    {
-      font-size: 2.5rem;
+      /* font-size: 2.5rem; */
       line-height: 3.5rem;
    }
    .page-layout-normal .block
@@ -943,26 +943,26 @@ footer
    }
    p
    {
-      font-size: 1rem !important;
+      /* font-size: 1rem !important; */
    }
    h1
    {
-      font-size: 2rem !important;
+      /* font-size: 2rem !important; */
    }
    dl dt, dd
    {
-      font-size: 1rem !important;
+      /* font-size: 1rem !important; */
    }
 .property dd
 {
-   font-size: 1.5rem;
+   /* font-size: 1.5rem; */
 }
 
  /* MENU */
 
    .menu .active>a, .menu a, a.suchindex-home
    {
-      font-size: 1.5rem;
+      /* font-size: 1.5rem; */
       line-height: 2.5rem;
    }
 
@@ -997,7 +997,7 @@ footer
    }
    .page.willkommen.dropdown-menu [type=submit]
    {
-      font-size: 1rem !important;
+      /* font-size: 1rem !important; */
       margin-top: 85px !important;
    }
    .page.willkommen.dropdown-menu .page-layout-normal .block
@@ -1010,6 +1010,8 @@ footer
       margin: 0;
       padding:0;
    }
+
+   
 
 
    .container {
@@ -1051,7 +1053,7 @@ footer
    }
    #form-search .field-meta label, .search-filters-advanced::before, #search-facets h3
    {
-      font-size: 1.5rem !important;
+      /* font-size: 1.5rem !important; */
    }
 
 /* Filter */
@@ -1086,7 +1088,7 @@ footer
    }
    .resource-list search-results-list list a
    {
-      font-size: 1rem !important;
+      /* font-size: 1rem !important; */
    }
    .facet-items.chosen-select[name="facet[dcterms_title][to]"]
    {
@@ -1139,7 +1141,7 @@ footer
    }
    #objektmerken, #objektmerken a, dl dt, .vorzurueck, .backtosearch a, body, .resource.show .property dd, .value.exporters li a
    {
-      font-size: 1rem !important;
+      /* font-size: 1rem !important; */
    }
    .objektmerkenabstand
    {
