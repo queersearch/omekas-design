@@ -130,9 +130,11 @@ $sortHeadings = [
         <!-- ENDE MEINER EINFÜGUNGEN-->
 
         <!-- FOLGENDE ZEILE AUSKOMMENTIERT WEGEN EINFÜGUNGEN-->
-        <!--<?php echo $this->searchFilters(); ?>-->
+        <!-- <?php echo $this->searchFilters(); ?> -->
 
-
+        <div class="browse-controls">
+            <?php echo $this->pagination(); ?>
+        </div>
 
         <div class="browse-control-mobile">
             <button type="button" class="browse-toggle closed"><?php echo $translate('Options'); ?></button>
@@ -161,6 +163,8 @@ $sortHeadings = [
             echo '<ul class="resources resource-grid">';
         } else if (str_contains($a, '66761')) {
             echo '<ul class="resources resource-grid">';
+        } else if (str_contains($a, '62124')) {
+            echo '<ul class="resources resource-grid">';
         } else {
             echo '<ul class="resources resource-list">';
         }
@@ -181,11 +185,12 @@ $sortHeadings = [
                     );
                     echo $item->linkRaw($linkContent, null, ['class' => 'resource-link']);
                     ?>
-                    <?php if ($body): ?>
+                    <!-- remove desc text -->
+                    <!-- <?php if ($body): ?>
                         <div class="description <?php echo ($bodyTruncate) ? $bodyTruncate : ''; ?>">
                             <?php echo $escape($body); ?>
                         </div>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
                 </div>
             </li>
         <?php endforeach; ?>
