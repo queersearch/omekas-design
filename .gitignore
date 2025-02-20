@@ -1,0 +1,6 @@
+*.scss
+.DS_Store
+*.svg
+*.tif
+fonts
+lightgallery
