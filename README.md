@@ -14,3 +14,5 @@ EDIT 23.02.2025: Vor- und Zurück-Pfeile auskommentiert;
   * **previous-next.phtml** = Veränderungen am Code, um die Vor- bzw. Zurück-Pfeile auszukommentieren; diese werden über die Designvorlage (show.phtml) ins Template geschrieben und sollen nicht doppelt auftauchen (siehe oben).
   * **Module.php** = Veränderungen am Code, um bei Metadatabrowse einen anderen Text als den üblichen auszugeben; Pfad auf Omeka S Instanz: modules/MetadateBrowse/ **Achtung**: Kein besonders gelungeber Hack;
   * **linked-resources-by-item-set.phtml** = ist zuständig für den Teil, der die verknüpften Ressourcen wiedergibt; Übersetzungen händisch eingegeben; Pfad auf Omeka S Instanz: modules/BlockPlus/view/common/
+  * **facet-select-range.phtml** = Übersetzungen händisch eingegeben; Pfad auf Omeka S Instanz: modules/AdvancedSearch/view/search/
+
