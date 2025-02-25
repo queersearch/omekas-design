@@ -15,4 +15,4 @@ EDIT 23.02.2025: Vor- und Zurück-Pfeile auskommentiert;
   * **Module.php** = Veränderungen am Code, um bei Metadatabrowse einen anderen Text als den üblichen auszugeben; Pfad auf Omeka S Instanz: modules/MetadateBrowse/ **Achtung**: Kein besonders gelungeber Hack;
   * **linked-resources-by-item-set.phtml** = ist zuständig für den Teil, der die verknüpften Ressourcen wiedergibt; Übersetzungen händisch eingegeben; Pfad auf Omeka S Instanz: modules/BlockPlus/view/common/
   * **facet-select-range.phtml** = Übersetzungen händisch eingegeben; Pfad auf Omeka S Instanz: modules/AdvancedSearch/view/search/
-
+  * `search.phtml` -> in `modules/AdvancedSearch/view/search`: hinzugeefügt `<h1 class="search-results-wrapper-title">Suchergebnisse</h1>`
