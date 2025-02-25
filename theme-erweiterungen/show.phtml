@@ -1,3 +1,4 @@
+<!-- path: themes/foundation/view/omeka/site/item/ -->
 <?php
 $translate = $this->plugin('translate');
 $escape = $this->plugin('escapeHtml');
@@ -36,66 +37,9 @@ $valueLang = $filterLocale ? [$lang, ''] : null;
     <!-- ENDE MEINE EINFÜGUNG -->
     <?php if ($fullWidthMainHasBlocks): ?>
         <div class="full-width-main">
-
-            <!-- MEINE EINFÜGUNG -->
-            <!-- 2 Divs, um die Seite in zwei Spalten zu gliedern -->
-
-
-            <div class="spalte-links">
-                <?php echo $fullWidthMainBlockContent->getBlocks(); ?>
-
-            </div>
+            <?php echo $fullWidthMainBlockContent->getBlocks(); ?>
         </div>
-        <div class="spalte-rechts">
-            <!-- ENDE MEINE EINFÜGUNG -->
-            <!-- MEINE EINFÜGUNG -->
-            <div id="objektmerken">
-                <?php $this->trigger('view.show.before'); ?>
-                <!-- MEINE EINFÜGUNG -->
-                Dieses Objekt merken</span>
-                <?php echo $this->selectionLinkBrowse(); ?>
-            </div>
-            <div class="objektmerkenabstand"></div>
 
-
-            <!-- EINFÜGUNG ZURÜCK- UND WEITER-PFEILE -->
-            <?php
-            $plugins = $this->getHelperPluginManager();
-            $hasPreviousNext = $plugins->has('previousNext');
-            ?>
-            <?php if ($hasPreviousNext): ?>
-                <div class="block resource-block block-previous-next">
-                    <?php if ($previous = $this->previousResource($resource)): ?>
-                        <!--<?= $previous->link($translate(''), null, ['class' => 'button', 'rel']) ?><span class="vorzurueck">&nbsp;&nbsp;voriges Objekt</span>-->
-                        <span
-                            class="vorzurueck"><?= $previous->link($translate('〈   voriges Objekt  '), null, ['class' => 'previous-item']) ?></span>
-                    <?php endif; ?>
-                    <?php if ($next = $this->nextResource($resource)): ?><!--<span class="vorzurueck">&nbsp;&nbsp;nächstes Objekt&nbsp;&nbsp;</span>-->
-                        <!--<?= $next->link($translate(''), null, ['class' => 'button', 'rel']) ?>-->
-                        <span
-                            class="vorzurueck">&nbsp;&nbsp;&nbsp;<?= $next->link($translate('nächstes Objekt   〉'), null, ['class' => 'next-item']) ?></span>
-                    <?php endif; ?>
-                    <!-- ENDE EINFÜGUNG ZURÜCK- UND WEITER-PFEILE -->
-
-                    <!-- Back-Button zur Suchergebnisliste -->
-                    <?php
-                    if ((strpos($_SERVER['HTTP_REFERER'] ?? '', '/search') !== false)) {
-                        $_SESSION['search'] = $_SERVER['HTTP_REFERER'];
-                    }
-                    ?>
-
-                    <?php if (!empty($_SESSION['search'])): ?>
-                        <a id="back-button" href="<?php echo $_SESSION['search']; ?>">
-                            <div class="backtosearch">〈〈 &nbsp; zurück zum Suchergebnis
-                        </a>
-                    </div>
-                <?php endif; ?>
-            </div>
-
-            <!-- MEINE EINFÜGUNG -->
-            <!-- Div-Ende -->
-        </div>
-        <!-- ENDE MEINE EINFÜGUNG -->
 
     <?php endif; ?>
 <?php endif; ?>
