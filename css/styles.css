@@ -3,7 +3,7 @@
 /****************************************/
 body {
    font-weight: 400;
-   font-family: "Lato", Arial, sans-serif;
+   font-family: "Helvetica Neue", "Lato", Arial, sans-serif;
    background-color: #eee;
    font-size: 20px;
 }
@@ -58,20 +58,12 @@ h1 {
 
 }
 
-h3,
 h4 {
-   font-family: Arial, Helvetica, sans-serif;
+   font-family: "Lato", Arial, Helvetica, sans-serif;
    font-size: 20px;
    font-weight: bold;
 }
 
-
-p {
-   /* font-size: 1.5rem; */
-}
-
-/*  Links */
-/* black */
 a {
    color: #000;
    background-color: transparent;
@@ -79,10 +71,6 @@ a {
    padding-bottom: 2px;
    display: inline;
 }
-
-/* neon gelb */
-
-
 
 a:hover {
    color: #000;
@@ -226,6 +214,7 @@ dd {
 .facet-items {
    margin: 0;
 }
+
 .layout-toggle {
    display: none;
 }
@@ -483,7 +472,10 @@ h3.label {
 
 
 /* LINKE SPALTE */
-.spalte-links {
+.spalte-links,
+.full-width-main dl,
+#itemfiles,
+.block-bulk-export {
    float: left;
    width: 60%;
    padding-right: 20px;
@@ -493,7 +485,8 @@ h3.label {
 /* LINK TÜRKIS */
 .spalte-links a,
 .link_yellow a,
-.wrapper-itemset a {
+.wrapper-itemset a,
+.full-width-main a {
    color: #000;
    background-color: #b8efe8;
    border-bottom: 1px solid black;
@@ -739,7 +732,7 @@ button,
 }
 
 #facets-reset,
-#facets-apply{
+#facets-apply {
    background-color: #fff;
    border: 1px solid #000;
    color: #000;
@@ -826,9 +819,10 @@ select,
 
 /* ERGEBNISLISTE */
 
-.search-results .resource-list .resource-heading, 
-.resource-metadata, .omeka-pagination, 
-.omeka-pagination span, 
+.search-results .resource-list .resource-heading,
+.resource-metadata,
+.omeka-pagination,
+.omeka-pagination span,
 .facet-elements {
    font-weight: normal;
    font-size: 16px;
@@ -861,6 +855,13 @@ select,
 
 #resources-linked {
    margin: 100px 0;
+   width: 100%;
+   float: left;
+   font-size: 16px;
+}
+
+#resources-linked tbody td {
+   padding: 0 .625rem;
 }
 
 #resources-linked caption {
@@ -868,21 +869,48 @@ select,
    padding: 10px 0;
 }
 
-#linked-filter label {
-   font-weight: bold;
+#resources-linked tbody tr {
+   border-top: 1px solid #e6e6e6;
 }
-#linked-filter label select {
-   margin: 10px 0;
- }
 
-
- #linked-filter tbody tr:nth-child(2n) {
+#resources-linked tbody tr:nth-child(2n) {
    background-color: #fff;
- }
+}
 
- #linked-filter tbody {
+#resources-linked tbody {
    border: none;
- }
+}
+
+#resources-linked td {
+   width: 50%;
+}
+
+#resources-linked a {
+   background-color: #fff;
+}
+
+#resources-linked h3 {
+   font-size: 2.2rem;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-weight: normal;
+}
+
+#resources-linked ul {
+   margin: 0;
+   padding: 0;
+}
+
+#resources-linked li {
+   margin: 5px 1.25rem;
+}
+
+#linked-filter label select {
+   margin: 0;
+}
+
+select {
+   width: 100%;
+}
 /***********************************************************/
 /******************** Grid *****************/
 /***********************************************************/
@@ -1035,7 +1063,7 @@ footer {
 /*****************************************************************/
 @media screen and (max-width:740px) {
    body:not(.browse) #content {
-      padding: 50px 20px;
+      padding: 20px 20px;
       margin: 1rem;
    }
 
@@ -1111,10 +1139,6 @@ footer {
 /****************** UNTER 768px BREITE **************************/
 /*****************************************************************/
 @media screen and (max-width: 768px) {
-   body:not(.browse) #content {
-      padding: 50px 20px;
-      margin: 1rem;
-   }
 
    h1.site-title {
       margin: 0px;
@@ -1173,9 +1197,9 @@ footer {
       text-align: left;
    }
 
-   .stack {
+   /* .stack {
       margin-left: 10px;
-   }
+   } */
 
    .item #content,
    #content,
@@ -1183,7 +1207,7 @@ footer {
    footer {
       max-width: 98% !important;
       margin: 0 auto !important;
-      padding: 50px 20px;
+      padding: 20px 20px;
    }
 
    .site-title img {
@@ -1326,7 +1350,10 @@ footer {
    }
 
    .spalte-rechts,
-   .spalte-links {
+   .spalte-links,
+   .full-width-main dl,
+   #itemfiles,
+   .block-bulk-export {
       float: none !important;
       width: 100% !important;
       padding-right: 0 !important;
@@ -1384,7 +1411,8 @@ footer {
 
 }
 
-.form-search,  .form-search fieldset {
+.form-search,
+.form-search fieldset {
    margin: 0;
 }
 

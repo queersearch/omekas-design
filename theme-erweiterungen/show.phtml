@@ -39,44 +39,41 @@ $valueLang = $filterLocale ? [$lang, ''] : null;
         <div class="full-width-main">
             <?php echo $fullWidthMainBlockContent->getBlocks(); ?>
         </div>
-
-
     <?php endif; ?>
-<?php endif; ?>
 
 
-<?php if ($mainWithSidebarHasBlocks || $leftSidebarHasBlocks || $rightSidebarHasBlocks): ?>
+    <?php if ($mainWithSidebarHasBlocks || $leftSidebarHasBlocks || $rightSidebarHasBlocks): ?>
 
-    <?php
-    if ($leftSidebarHasBlocks && $rightSidebarHasBlocks) {
-        $sidebarWidth = '3';
-        $mainWidth = '6';
-    } else {
-        $sidebarWidth = '4';
-        $mainWidth = '8';
-    }
-    ?>
+        <?php
+        if ($leftSidebarHasBlocks && $rightSidebarHasBlocks) {
+            $sidebarWidth = '3';
+            $mainWidth = '6';
+        } else {
+            $sidebarWidth = '4';
+            $mainWidth = '8';
+        }
+        ?>
 
-    <div class="grid-x grid-margin-x">
-        <?php if ($leftSidebarHasBlocks): ?>
-            <div class="left-sidebar cell medium-<?php echo $sidebarWidth; ?>">
-                <?php echo $leftSidebarBlockContent->getBlocks(); ?>
-            </div>
-        <?php endif; ?>
+        <div class="grid-x grid-margin-x">
+            <?php if ($leftSidebarHasBlocks): ?>
+                <div class="left-sidebar cell medium-<?php echo $sidebarWidth; ?>">
+                    <?php echo $leftSidebarBlockContent->getBlocks(); ?>
+                </div>
+            <?php endif; ?>
 
-        <?php if ($mainWithSidebarHasBlocks): ?>
-            <div class="main-with-sidebar cell medium-<?php echo $mainWidth; ?>">
-                <?php echo $mainWithSidebarBlockContent->getBlocks(); ?>
-            </div>
-        <?php endif; ?>
+            <?php if ($mainWithSidebarHasBlocks): ?>
+                <div class="main-with-sidebar cell medium-<?php echo $mainWidth; ?>">
+                    <?php echo $mainWithSidebarBlockContent->getBlocks(); ?>
+                </div>
+            <?php endif; ?>
 
-        <?php if ($rightSidebarHasBlocks): ?>
-            <div class="right-sidebar cell medium-<?php echo $sidebarWidth; ?>">
-                <?php echo $rightSidebarBlockContent->getBlocks(); ?>
-            </div>
-        <?php endif; ?>
-    </div>
-<?php endif; ?>
-<!--MEINE AUSKOMMENTIERUNG <?php $this->trigger('view.show.after'); ?>-->
+            <?php if ($rightSidebarHasBlocks): ?>
+                <div class="right-sidebar cell medium-<?php echo $sidebarWidth; ?>">
+                    <?php echo $rightSidebarBlockContent->getBlocks(); ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
+    <!--MEINE AUSKOMMENTIERUNG <?php $this->trigger('view.show.after'); ?>-->
 </div>
 </div>
