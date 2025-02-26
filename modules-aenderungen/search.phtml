@@ -108,8 +108,8 @@ $this->headScript()
                             <?php // It may be a span or a link + search. ?>
                             <li><span aria-current="page"><?= $escape($itemSet->displayTitle(null, $langValue)) ?></span></li>
                             <?php /*
-                                                                                                                                     <li><?= $hyperlink($itemSet->displayTitle(null, $langValue), $isAdmin ? $itemSet->adminUrl() : $itemSet->siteUrl($site->slug())) ?></li>
-                                                                                                                                     */ ?>
+                                                                                                                                                                                            <li><?= $hyperlink($itemSet->displayTitle(null, $langValue), $isAdmin ? $itemSet->adminUrl() : $itemSet->siteUrl($site->slug())) ?></li>
+                                                                                                                                                                                            */ ?>
                         <?php else: ?>
                             <li><span aria-current="page"><?= $escape($translate('Search')) ?></span></li>
                         <?php endif; ?>
