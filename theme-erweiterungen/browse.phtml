@@ -17,7 +17,7 @@ if ($itemSetShow) {
     $fullWidthMainBlockContent = $this->resourcePageBlocks($itemSet, 'full_width_main');
     $fullWidthMainHasBlocks = $fullWidthMainBlockContent->hasBlocks();
     $mainWithSidebarBlockContent = $this->resourcePageBlocks($itemSet);
-    $mainWithSidebarHasBlocks= $mainWithSidebarBlockContent->hasBlocks();
+    $mainWithSidebarHasBlocks = $mainWithSidebarBlockContent->hasBlocks();
     $leftSidebarBlockContent = $this->resourcePageBlocks($itemSet, 'left');
     $leftSidebarHasBlocks = $leftSidebarBlockContent->hasBlocks();
     $rightSidebarBlockContent = $this->resourcePageBlocks($itemSet, 'right');
@@ -28,7 +28,7 @@ if ($itemSetShow) {
 
 $layoutSetting = $this->themeSetting('browse_layout', 'grid');
 $gridState = ($layoutSetting == 'togglegrid') ? 'disabled' : '';
-$listState = ($layoutSetting == 'togglelist') ? 'disabled': '';
+$listState = ($layoutSetting == 'togglelist') ? 'disabled' : '';
 $isGrid = (strpos($layoutSetting, 'grid') !== false) ? true : false;
 $headingTerm = $this->siteSetting('browse_heading_property_term');
 $bodyTerm = $this->siteSetting('browse_body_property_term');
@@ -55,145 +55,169 @@ $sortHeadings = [
 ?>
 
 <?php if ($itemSetShow): ?>
-    <?php echo $this->pageTitle($itemSet->displayTitle(null, $valueLang), 2); ?>
-    <h3><?php echo $translate('Item set'); ?></h3>
-    <div class="<?php echo ($showLayout == 'inline') ? 'inline' : 'stack'; ?>">
-        <?php if ($fullWidthMainHasBlocks): ?>
-        <div class="full-width-main">
-            <?php echo $fullWidthMainBlockContent->getBlocks(); ?>
+    <div class="wrapper-itemset">
+        <?php echo $this->pageTitle($itemSet->displayTitle(null, $valueLang), 1); ?>
+        <!--<h3><?php echo $translate('Item set'); ?></h3>-->
+        <div class="<?php echo ($showLayout == 'inline') ? 'inline' : 'stack'; ?>">
+            <?php if ($fullWidthMainHasBlocks): ?>
+                <div class="full-width-main">
+                    <?php echo $fullWidthMainBlockContent->getBlocks(); ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($mainWithSidebarHasBlocks || $leftSidebarHasBlocks || $rightSidebarHasBlocks): ?>
+
+                <?php $sidebarWidth = ($leftSidebarHasBlocks && $rightSidebarHasBlocks) ? '2' : '4'; ?>
+
+                <div class="grid-x grid-margin-x">
+                    <?php if ($leftSidebarHasBlocks): ?>
+                        <div class="left-sidebar cell medium-<?php echo $sidebarWidth; ?>">
+                            <?php echo $leftSidebarBlockContent->getBlocks(); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($mainWithSidebarHasBlocks): ?>
+                        <div class="main-with-sidebar cell medium-8">
+                            <?php echo $mainWithSidebarBlockContent->getBlocks(); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($rightSidebarHasBlocks): ?>
+                        <div class="right-sidebar cell medium-<?php echo $sidebarWidth; ?>">
+                            <?php echo $rightSidebarBlockContent->getBlocks(); ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
         </div>
+
+        <div class="item-set-items">
+            <!--<?php echo '<h3>' . $escape($translate('Items')) . '</h3>'; ?>-->
+        <?php else: ?>
+            <!--<?php echo $this->pageTitle($translate('Items'), 2); ?>-->
         <?php endif; ?>
 
-        <?php if ($mainWithSidebarHasBlocks || $leftSidebarHasBlocks || $rightSidebarHasBlocks): ?>
 
-        <?php $sidebarWidth = ($leftSidebarHasBlocks && $rightSidebarHasBlocks) ? '2' : '4'; ?>
-        
-        <div class="grid-x grid-margin-x">
-            <?php if ($leftSidebarHasBlocks): ?>
-            <div class="left-sidebar cell medium-<?php echo $sidebarWidth; ?>">
-                <?php echo $leftSidebarBlockContent->getBlocks(); ?>
-            </div>
-            <?php endif; ?>
+        <!-- MEINE EINFÜGUNGEN -->
+        <?php
+        $a = $this->searchFilters();
+        if (str_contains($a, 'Buch')) {
+            $b = '<h1 class="objektefiltern">Bücher</h1>';
+            echo $b;
+        } else if (str_contains($a, 'Zeitschrift'))
+        //else if ($a == "Suchergebnis Zeitschrift")
+        {
+            $c = '<h1 class="objektefiltern">Zeitschriften</h1>';
+            echo $c;
+        } else if (str_contains($a, 'Plakat'))
+        //else if ($a == "Suchergebnis Plakat")
+        {
+            $c = '<h1 class="objektefiltern">Plakate</h1>';
+            echo $c;
+        } else if (str_contains($a, 'Artikel')) {
+            $c = '<h1 class="objektefiltern">Artikel</h1>';
+            echo $c;
+        } else if (str_contains($a, 'Archivgut')) {
+            $d = '<h1 class="objektefiltern">Archivgut</h1>';
+            echo $d;
+        } else {
+            //$e = $this->searchFilters();
+//echo  "TEST";
+        }
 
-            <?php if ($mainWithSidebarHasBlocks): ?>
-            <div class="main-with-sidebar cell medium-8">
-                <?php echo $mainWithSidebarBlockContent->getBlocks(); ?>
-            </div>
-            <?php endif; ?>
+        ?>
 
-            <?php if ($rightSidebarHasBlocks): ?>
-            <div class="right-sidebar cell medium-<?php echo $sidebarWidth; ?>">
-                <?php echo $rightSidebarBlockContent->getBlocks(); ?>
-            </div>
-            <?php endif; ?>
+        <!-- ENDE MEINER EINFÜGUNGEN-->
+
+        <!-- FOLGENDE ZEILE AUSKOMMENTIERT WEGEN EINFÜGUNGEN-->
+        <!-- <?php echo $this->searchFilters(); ?> -->
+
+        <div class="browse-controls">
+            <?php echo $this->pagination(); ?>
         </div>
-        <?php endif; ?>
-    </div>
 
-    <div class="item-set-items">
-    <?php echo '<h3>' . $escape($translate('Items')) . '</h3>'; ?>
-<?php else: ?>
-    <!--<?php echo $this->pageTitle($translate('Items'), 2); ?>-->
-<?php endif; ?>
+        <div class="browse-control-mobile">
+            <button type="button" class="browse-toggle closed"><?php echo $translate('Options'); ?></button>
+        </div>
+        <div class="browse-controls closed">
+            <?php echo $this->pagination(); ?>
+            <?php if (strpos($layoutSetting, 'toggle') !== false): ?>
+                <div class="layout-toggle">
+                    <button type="button" aria-label="<?php echo $translate('Grid'); ?>" class="grid o-icon-grid" <?php echo $gridState; ?>></button>
+                    <button type="button" aria-label="<?php echo $translate('List'); ?>" class="list o-icon-list" <?php echo $listState; ?>></button>
+                </div>
+            <?php endif; ?>
+            <?php echo $this->hyperlink($translate('Advanced search'), $this->url('site/resource', ['controller' => 'item', 'action' => 'search'], ['query' => $query], true), ['class' => 'advanced-search']); ?>
+            <?php echo $this->browse()->renderSortSelector('items'); ?>
+        </div>
 
-
-<!-- MEINE EINFÜGUNGEN -->
-<?php 
-$a = $this->searchFilters();
-//echo $a;
-
-//if ($a = "7")
-if (str_contains($a, '7')) 
-//if (is_string($a))
-//if ($a == "Suchergebnis 7")
-{
-    $b = '<h2>&nbsp;Bücher</h2>';
-    echo $b;
-}
-
-else if (str_contains($a, '8')) 
-//else if ($a == "Suchergebnis Zeitschrift")
-{
-    $c = '<h2>&nbsp;Zeitschriften</h2>';
-    echo $c;
-}
-
-else if (str_contains($a, '3456')) 
-//else if ($a == "Suchergebnis Plakat")
-{
-    $c = '<h2>&nbsp;Plakate</h2>';
-    echo $c;
-}
-
-else if (str_contains($a, '3455')) 
-//else if ($a == "Suchergebnis Zeitschrift")
-{
-    $c = '<h2>&nbsp;Artikel</h2>';
-    echo $c;
-}
-
-//else if ($a == "Suchergebnis 4108") 
-else if (str_contains($a, '4108')) 
-{
-    $d = '<h2>&nbsp;Archivgut</h2>';
-    echo $d;
-}
-
- else
-{
-//$e = $this->searchFilters();
-//echo  $e;
-}
-
-?>
-
-<!-- ENDE MEINER EINFÜGUNGEN-->
-
-<!-- FOLGENDE ZEILE AUSKOMMENTIERT WEGEN EINFÜGUNGEN-->
-<!--<?php echo $this->searchFilters(); ?>-->
+        <?php $this->trigger('view.browse.before'); ?>
+        <!--<ul class="resources <?php echo ($isGrid) ? 'resource-grid' : 'resource-list'; ?>">-->
 
 
+        <!-- ABFRAGEN, OB ITEM SET MIT BILDERN = GRID-, ODER NUR TITEL = LISTENANSICHT-->
+        <?php
+        $a = $_SERVER['REQUEST_URI'];
+        // Checken, ob ID's der fotografischen Sammlungen enthalten sind
+        if (str_contains($a, '35381')) {
+            echo '<ul class="resources resource-grid">';
+            // petra gall 
+        } else if (str_contains($a, '66761')) {
+            echo '<ul class="resources resource-grid">';
+        } else if (str_contains($a, '62124')) {
+            echo '<ul class="resources resource-grid">';
+            // freundin
+        } else if (str_contains($a, '66764')) {
+            echo '<ul class="resources resource-grid">';
+            // südwind
+        } else if (str_contains($a, '66768')) {
+            echo '<ul class="resources resource-grid">';
+            // frauen info
+        } else if (str_contains($a, '66769')) {
+            echo '<ul class="resources resource-grid">';
+            // frauenzeitung
+        } else if (str_contains($a, '66770')) {
+            echo '<ul class="resources resource-grid">';
+            // Kellerjournal
+        } else if (str_contains($a, '66771')) {
+            echo '<ul class="resources resource-grid">';
+            // personen /Orgs
+        } else if (str_contains($a, '21779')) {
+            echo '<ul class="resources resource-grid">';
+        } else {
+            echo '<ul class="resources resource-list">';
+        }
+        ?>
 
-<div class="browse-control-mobile">
-<button type="button" class="browse-toggle closed"><?php echo $translate('Options'); ?></button>
-</div>
-<div class="browse-controls closed">
-    <?php echo $this->pagination(); ?>
-    <?php if (strpos($layoutSetting, 'toggle') !== false): ?>
-    <div class="layout-toggle">
-        <button type="button" aria-label="<?php echo $translate('Grid'); ?>" class="grid o-icon-grid" <?php echo $gridState; ?>></button>
-        <button type="button" aria-label="<?php echo $translate('List'); ?>" class="list o-icon-list" <?php echo $listState; ?>></button>
-    </div>
-    <?php endif; ?>
-    <?php echo $this->hyperlink($translate('Advanced search'), $this->url('site/resource', ['controller' => 'item', 'action' => 'search'], ['query' => $query], true), ['class' => 'advanced-search']); ?>
-    <?php echo $this->browse()->renderSortSelector('items'); ?>
-</div>
-
-<?php $this->trigger('view.browse.before'); ?>
-<ul class="resources <?php echo ($isGrid) ? 'resource-grid' : 'resource-list'; ?>">
-<?php
-foreach ($items as $item):
-    $heading = $headingTerm ? $item->value($headingTerm, ['default' => $translate('[Untitled]'), 'lang' => $valueLang]) : $item->displayTitle(null, $valueLang);
-    $body = $bodyTerm ? $item->value($bodyTerm, ['lang' => $valueLang]) : $item->displayDescription(null, $valueLang);
-?>
-    <li class="item resource <?php echo ($isGrid) ? '' : 'media-object'; ?>">
-        <div class="resource-meta <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
-            <?php
-            $linkContent = sprintf('%s<span class="resource-name">%s</span>',
-                $thumbnail($item, 'medium'),
-                $escape($heading));
-            echo $item->linkRaw($linkContent, null, ['class' => 'resource-link']);
+        <?php
+        foreach ($items as $item):
+            $heading = $headingTerm ? $item->value($headingTerm, ['default' => $translate('[Untitled]'), 'lang' => $valueLang]) : $item->displayTitle(null, $valueLang);
+            $body = $bodyTerm ? $item->value($bodyTerm, ['lang' => $valueLang]) : $item->displayDescription(null, $valueLang);
             ?>
-            <?php if ($body): ?>
-            <div class="description <?php echo ($bodyTruncate) ? $bodyTruncate : ''; ?>"><?php echo $escape($body); ?></div>
-            <?php endif; ?>
-        </div>
-    </li>
-<?php endforeach; ?>
-</ul>
-<?php echo ($itemSetShow) ? '</div>' : ''; ?>
-<?php $this->trigger('view.browse.after'); ?>
+            <li class="item resource <?php echo ($isGrid) ? '' : 'media-object'; ?>">
+                <div class="resource-meta <?php echo ($isGrid) ? '' : 'media-object-section'; ?>">
+                    <?php
+                    $linkContent = sprintf(
+                        '%s<span class="resource-name">%s</span>',
+                        $thumbnail($item, 'large'),
+                        $escape($heading)
+                    );
+                    echo $item->linkRaw($linkContent, null, ['class' => 'resource-link']);
+                    ?>
+                    <!-- remove desc text -->
+                    <!-- <?php if ($body): ?>
+                        <div class="description <?php echo ($bodyTruncate) ? $bodyTruncate : ''; ?>">
+                            <?php echo $escape($body); ?>
+                        </div>
+                    <?php endif; ?> -->
+                </div>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+        <?php echo ($itemSetShow) ? '</div>' : ''; ?>
+        <?php $this->trigger('view.browse.after'); ?>
 
-<div class="browse-controls">
-    <?php echo $this->pagination(); ?>
-</div>
+        <div class="browse-controls">
+            <?php echo $this->pagination(); ?>
+        </div>
+    </div>
